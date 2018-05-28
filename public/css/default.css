@@ -1,0 +1,133 @@
+/* ------ general
+-----------------------------------------------*/
+
+body {
+font-family:Arial, Helvetica, sans-serif;
+background: #ffffff ;
+font-size: 12px;
+}
+
+.wrapper {
+margin:80px auto 0;
+margin-bottom: 134px;
+margin-top: 150px;
+width:1000px;
+}
+
+
+.blocks p {
+margin-bottom:15px;
+position:static;
+}
+
+.btn {
+display:block;
+float:left;
+height:31px;
+line-height:31px;
+padding:0 10px;
+background:url(../gfx/bgbtn.jpg) repeat-x;
+color:#565e62;
+font-weight:bold;
+font-size:11px;
+border:1px solid #e1e0df;
+outline:none;
+}
+
+
+.text{
+    padding:5px 10px;
+    height:24px;
+    border:1px solid #ddd;
+    color:#333;
+    background:url(../gfx/bginput.jpg) repeat-x bottom #fff;
+    position:static;
+    z-index:2;
+    margin-top:5px;
+}
+.sel{
+
+    border:1px solid #ddd;
+    margin-top:10px;
+    width:220px;
+}
+
+
+
+.text {
+width:220px;
+}
+
+
+
+
+.blocks label {
+float:left;
+width:75px;
+line-height:37px;
+text-align:right;
+margin-right:15px;
+font-weight:bold;
+color:#666;
+}
+
+#lp{
+    margin-top:-9px;
+    width:130px;
+
+}
+
+#lp1{
+    width:130px;
+
+}
+
+#ca{
+    margin-bottom: 30px;
+}
+
+/* CSS3 */
+.btn,
+.text,
+.textarea,
+.sel {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+
+}
+
+
+a {
+color: #CCCCCC;
+}
+
+a img {
+border:none;
+}
+
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+
+
+}
+
+footer {
+    flex: 0 0 auto;
+
+
+}

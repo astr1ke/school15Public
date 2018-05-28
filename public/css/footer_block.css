@@ -1,0 +1,111 @@
+/*
+ * continue school.css
+ */
+#footer {
+	margin-bottom: 25px;
+}
+
+#footer .social_links {
+	margin-top: 10px;
+	float: right;
+}
+#footer .social_links > a + a {
+	margin-left: 10px;
+}
+
+#footer .signup {
+	margin-top: 10px;
+}
+#footer .signup a {
+	font-size: 18px;
+	padding: 18px 30px;
+	line-height: 1;
+}
+#footer .wp-copyright {
+	margin-top: 125px;
+}
+#footer .search {
+	margin-bottom: 37px;
+}
+#footer .search-box {
+	width: 180px;
+	margin-left: 5px;
+	padding-right: 25px;
+	background-position: right top;
+}
+#footer .search-box:focus {
+	background-position: right -30px;
+	outline: none;
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(122, 125, 127, 0.75);
+	-moz-box-shadow:    0px 2px 4px 0px rgba(122, 125, 127, 0.75);
+	box-shadow:         0px 2px 4px 0px rgba(122, 125, 127, 0.75);
+}
+
+#footer .contacts {
+	float: right;
+	margin-top: 125px;
+	text-align: right;
+}
+#footer .contacts > .callback-link a {
+	width: 216px;
+	margin: 10px 0;
+	padding: 10px 32px 2px 2px;
+	color: #999999;
+	line-height: 30px;
+	border-bottom: 1px solid #999999;
+	background: url('/assets/images/phone-icon.png') top right no-repeat;
+}
+#footer .contacts > .callback-link a:hover {
+	color: #000000;
+	border-bottom-color: #000000;
+}
+#footer .contacts > .phone {
+	padding: 0;
+}
+#footer .contacts > .email * {
+	font-size: 16px;
+	color: #666666;
+}
+#footer .contacts > .email > a+a {
+	text-decoration: underline;
+}
+#footer .contacts > .email > a:hover {
+	color: #000000;
+}
+#footer .phone {
+	font-size: 24px;
+	padding: 35px 0;
+}
+/*
+ Site map
+*/
+#footer .site-map h4,
+#footer .site-map li {
+	font-size: 14px;
+	line-height: 15px;
+	cursor: default;
+}
+#footer .site-map h4 {
+	margin: 10px 0 0 0;
+}
+#footer .site-map h4 a {
+	color: #333333;
+}
+#footer .site-map ul {
+	list-style: none;
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+#footer .site-map ul a {
+	color: #999999;
+	text-decoration: none;
+}
+#footer .site-map ul a:hover {
+	text-decoration: underline;
+}
+#footer .site-map .col-sm-4 {
+  padding-right: 0;
+}
+#footer .site-map li a {
+  font-size: 14px;
+}

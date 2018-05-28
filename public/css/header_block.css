@@ -1,0 +1,234 @@
+/*
+continue school.css
+*/
+#header {
+	padding-top: 5px;
+	background: #ffffff;
+}
+
+#header .social_links {
+    margin-top: 10px;
+}
+#header .social_links a + a {
+ margin-left: 7px;
+}
+
+#header .social_links .auth {
+	margin-right: 10px;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url('/assets/images/school/key-icon.png') no-repeat;
+}
+
+.lang {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 15px;
+}
+
+.lang .lang-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.lang .lang-list > li + li:before {
+	content: "|\00a0";
+	color: #000000;
+	padding: 0 5px;
+}
+.lang .lang-list > li {
+	display: inline-block; 
+	font-size: 12pt;
+	line-height: 14pt;
+}
+.lang .lang-list>.active {
+	color: #777;
+}
+.lang .lang-list a {
+	padding-bottom: 2px;
+}
+.lang .lang-list a:hover {
+	padding-bottom: 0px; border-bottom: 1px solid #000000;
+}
+
+#header .top-logo {
+	width: 210px;
+	height: 190px;
+	background: url('/images/logo.jpg') no-repeat top left;
+	background-size: contain;
+	margin: 0 auto;
+
+	/*-webkit-transform-origin: 50% 0;
+		-ms-transform-origin: 50% 0;
+			transform-origin: 50% 0;*/
+
+	-webkit-transition: all 0.15s;
+			transition: all 0.15s;
+}
+#header .top-logo-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -9999px;
+}
+#header .top-logo-title {
+	width: 240px;
+	padding-left: 6px;
+	font-weight: 700;
+	font-size: 14pt;
+	text-align: center;
+}
+
+#header .phone {
+	width: 100%;
+	font-size: 20pt;
+	padding: 0;
+	text-align: right;
+}
+#header .phone .address {
+	font-size: 13pt;
+	line-height: 13pt;
+}
+#header .phone .address a {
+	color: #999999;
+}
+#header .phone .address a:hover {
+	text-decoration: underline;
+}
+#header .callback {
+	margin-top: 5px;
+	text-align: right;
+}
+#header .callback a {
+	font-weight: bold;
+	text-decoration: underline;
+}
+#header .callback a:hover {
+	text-decoration: none;
+}
+#header .signup {
+	margin-top: 15px;
+	text-align: left;
+}
+
+@media (max-width: 991px) {
+	#header .top-logo {
+		margin-top: 38px;
+	}
+	#header .social_links {
+		float: left;
+	}
+	#header .auth,
+	#header .lang {
+		margin-top: 0;
+		margin-left: 30px;
+	}
+	#header .phone,
+	#header .signup {
+	text-align: center;
+	}
+}
+#main_menu {
+    /*margin-top: -76px;*/
+	text-align: center;
+	/*opacity: 0.9;*/
+}
+.main-menu-list {
+	padding: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	list-style: none;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+.main-menu-list > li {
+	display: block;
+	float: left;
+}
+.main-menu-list > li:last-child {
+    margin-right: 0px;
+    float: right;
+}
+.main-menu-list a,
+.main-menu-list span {
+	padding-left: 4px;
+	padding-right: 4px;
+	cursor: pointer;
+	color: #808285;
+	font-size: 15px;
+}
+.main-menu-list > li > a:hover,
+.main-menu-list > li > span:hover {
+	padding-left: 3px;
+	padding-right: 3px;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	color: #000;
+	text-decoration: none;
+}
+.main-menu-list .active>* {
+	color: #FF6900;
+}
+.main-menu-list li ul {
+	position: absolute;
+	display: none;
+	top: 30px;
+	min-width: 200px;
+	background: #fff;
+	margin: 0;
+	padding: 7px 0;
+	list-style: none;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+	z-index: 99;
+}
+.main-menu-list li ul li { 
+	display: block; 
+	width: 100%; 
+	margin: 0;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 20px;
+	text-shadow: 1px 1px 0 #fff;
+	line-height: 22pt;
+}
+.main-menu-list li ul li a {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.2;
+}
+.main-menu-list li ul li a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+#header.fixed {
+	position: fixed !important;
+	z-index: 1000;
+    top: 0; 
+	left: 0;
+    width: 100%;
+    box-shadow: 0 0 3px #666666;
+}
+#header.fixed .top-logo-title,
+#header.fixed .phone .address {
+	display: none;
+}
+#header.fixed .signup {
+	margin-top: 15px;
+}
+
+#header.static-imp {
+	position: static !important;
+}
+
+#header.fixed .top-logo {
+	/*-webkit-transform: scale3d(0.8,0.8,1);
+			transform: scale3d(0.8,0.8,1);*/
+	width: 133px;
+	height: 120px;
+}
