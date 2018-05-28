@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="widget categories" style="float: right">
-                    <h3>Организационные материалы</h3>
+                    <h3>Организационные материалы()</h3>
                     <div class="row">
                         <div class="col-sm-6">
                             <ul class="blog_category" style="max-width: 250px; width: max-content">
