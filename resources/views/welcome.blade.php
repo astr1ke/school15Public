@@ -124,7 +124,9 @@
                         </a>
                     </div>
                 </li>
+                
                 @endforeach
+                
             </ul>
             <div class="amazingcarousel-prev"></div>
             <div class="amazingcarousel-next"></div>
