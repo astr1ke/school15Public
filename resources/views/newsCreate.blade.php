@@ -18,7 +18,6 @@
     <link href="{{asset('css/default.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/header_block.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('css')}}/school.css?1517413835" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{asset('css')}}/bootstrap.css" />
     <link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">
 
     <style type="text/css">
@@ -29,6 +28,16 @@
             width: max-content;
 
         }
+
+        .fld2 {
+            background: whitesmoke;
+            border-radius: 11px;
+            padding: 15px;
+            width: max-content;
+            height: 82px;
+            margin-bottom: 15px;
+        }
+
     </style>
 
 
@@ -148,7 +157,7 @@
                     <p class="area">
                         <textarea class="text" name="text" id="text" rows="10" cols="80"></textarea>
                     </p>
-                    <div class="fld">
+                    <div class="fld2">
                         <p>
                             <label id="lp">Фото для заголовка:</label>
                             <input id="img" type="file"  name="file">
