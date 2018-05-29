@@ -59,6 +59,19 @@
                                             <span id="publish_date">{{$n->created_at}}</span>
                                             <span><i class="fa fa-user"></i> <a href="#">{{$n->user}}</a></span>
                                             <span><i class="fa fa-comment"></i> <a href="#">{{count(\App\article::find($n->id)->comments) .' коммент.'}}</a></span>
+                                            @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                                <form action="/articleDelete/{{$n->id}}" method="post" >
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button  class="btn fa" style="margin-top: 5px; width: 100px " value="Удалить статью">Удалить ст.</button>
+                                                </form>
+                                            @endif
+
+                                            @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                                <form action="/articleEdit/article/{{$n->id}}"  >
+                                                    <button   class="btn fa" style="margin-top:5px; width: 100px" value="Редактировать статью">Редактир ст.</button>
+                                                </form>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -76,21 +89,9 @@
                                         </div>
 
                                         <form action="/articleNews/{{$n->id}}" >
-                                         <button class="btn btn-primary readmore value="Читать далее">Читать далее  <i class="fa fa-angle-right"></i></button>
+                                         <button class="btn btn-primary readmore" value="Читать далее">Читать далее  <i class="fa fa-angle-right"></i></button>
                                         </form>
-                                        @if (Auth::check() and Auth::user()->IsAdmin == 1)
-                                        <form action="/articleDelete/{{$n->id}}" method="post" >
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <button style="margin-left: 15px" class="btn btn-primary readmore value="Удалить статью">Удалить статью  </i></button>
-                                        </form>
-                                        @endif
 
-                                        @if (Auth::check() and Auth::user()->IsAdmin == 1)
-                                            <form action="/articleEdit/article/{{$n->id}}"  >
-                                                  <button style="margin-left: 15px" class="btn btn-primary readmore value="Редактировать статью">Редактировать статью  </i></button>
-                                            </form>
-                                        @endif
 
 
                                     </div>
