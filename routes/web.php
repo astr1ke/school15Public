@@ -63,6 +63,10 @@ Route::post('/addTeacherPost','TeacherController@post');
 Route::post('comment', 'CommentController@store')->name('comment');
 Route::any('commentDelete', 'CommentController@delete');
 
+//Роут uLogin
+Route::post('ulogin','uLoginController@login');
+
+
 Route::get('logout', function (){
     auth::logout();
     return redirect('/');

@@ -6,14 +6,16 @@
                 <div class="col-xs-4">
                     <div class="header-social">
                         <script src="//ulogin.ru/js/ulogin.js"></script>
-                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2F;mobilebuttons=0;"></div>
+                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri={{'http://'. $_SERVER['HTTP_HOST']}}/ulogin;mobilebuttons=0;"></div>
                     </div>
-                    <div class="fzinfo-link"><a href="http://school.wunderpark.ru/svedeniya-ob-obrazovatelnoj-org"></a></div>
                     @if (!(Auth::check()))
                         <div class="signup">
                             <a class="btn-flat nyroModal" href="/login" >Войти на сайт</a>
                         </div>
                     @else
+                    <div>
+                        <p>{{'Вы вошли как '.Auth::user()->name}}</p>
+                    </div>
                     <div class="signup">
                         <a class="btn-flat nyroModal" href="/logout" >Выйти с сайта</a>
                     </div>
