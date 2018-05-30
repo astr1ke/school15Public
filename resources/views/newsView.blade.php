@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Company-HTML Bootstrap theme</title>
+    <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
 
     @include('layouts.stiles')
     <!--Стили коментариев-->
