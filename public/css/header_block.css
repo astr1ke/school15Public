@@ -81,10 +81,11 @@ continue school.css
 }
 
 #header .phone {
+	margin-top: 5px;
 	width: 100%;
 	font-size: 20pt;
 	padding: 0;
-	text-align: right;
+	text-align: left;
 }
 #header .phone .address {
 	font-size: 13pt;
@@ -97,8 +98,8 @@ continue school.css
 	text-decoration: underline;
 }
 #header .callback {
-	margin-top: 5px;
-	text-align: right;
+	margin-top: 15px;
+	text-align: left;
 }
 #header .callback a {
 	font-weight: bold;
@@ -109,7 +110,7 @@ continue school.css
 }
 #header .signup {
 	margin-top: 15px;
-	text-align: left;
+	text-align: right;
 }
 
 @media (max-width: 991px) {

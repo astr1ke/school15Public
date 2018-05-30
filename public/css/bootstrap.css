@@ -1480,6 +1480,7 @@ blockquote.pull-right .small:after {
   content: '\00A0 \2014';
 }
 address {
+  margin-top: 15px;
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.42857143;
@@ -4133,7 +4134,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-header {
-    float: left;
+    float: right;
   }
 }
 .navbar-collapse {

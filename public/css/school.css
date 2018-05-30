@@ -1078,7 +1078,7 @@ hr {
 }
 
 .header-social {
-	padding-top: 15px;
+	padding-left: 15px;
 }
 
 .header-social .icosocial {
@@ -1139,7 +1139,7 @@ hr {
 }
 
 .footer-social {
-	text-align: right;
+	text-align: left;
 	padding-top: 15px;
 }
 .footer-social .icosocial {

@@ -4,25 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-4">
-                    <div class="header-social">
-                        <script src="//ulogin.ru/js/ulogin.js"></script>
-                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri={{'http://'. $_SERVER['HTTP_HOST']}}/ulogin;mobilebuttons=0;"></div>
+                    <div class="phone">Тел.: +7 (86140) 67251
+                        <div class="address"><a href="/contacts">село Коноково, улица Донская,5.</a></div>
                     </div>
-                    @if (!(Auth::check()))
-                        <div>
-                            <p>{{'Вход на сайт с помощью соц сетей'}}</p>
-                        </div>
-                        <div class="signup">
-                            <a class="btn-flat nyroModal" href="/login" >Войти на сайт</a>
-                        </div>
-                    @else
-                    <div>
-                        <p>{{'Вы вошли как '.Auth::user()->name}}</p>
+                    <div class="callback">
+                        <a class="nyroModal" href="/ajax/modal/callback" onclick="yaCounter30740753.reachGoal('zakaz_zvonka'); return true;">Отправить нам E-mail</a>
                     </div>
-                    <div class="signup">
-                        <a class="btn-flat nyroModal" href="/logout" >Выйти с сайта</a>
-                    </div>
-                    @endif
                 </div>
                 <div class="col-xs-4">
                     <div class="top-logo">
@@ -30,12 +17,26 @@
                     </div>
                 </div>
                 <div class="col-xs-4">
-                    <div class="phone">Тел.: +7 (86140) 67251
-                        <div class="address"><a href="/contacts">село Коноково, улица Донская,5.</a></div>
+                    <div class="header-social"style="text-align: right">
+                        <script src="//ulogin.ru/js/ulogin.js"></script>
+                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri={{'http://'. $_SERVER['HTTP_HOST']}}/ulogin;mobilebuttons=0;"></div>
                     </div>
-                    <div class="callback">
-                        <a class="nyroModal" href="/ajax/modal/callback" onclick="yaCounter30740753.reachGoal('zakaz_zvonka'); return true;">Отправить нам E-mail</a>
-                    </div>
+                    @if (!(Auth::check()))
+                        <div style="text-align: right">
+                            <p>{{'Вход на сайт с помощью соц сетей'}}</p>
+                        </div>
+                        <div class="signup">
+                            <a class="btn-flat nyroModal" href="/login" >Войти на сайт</a>
+                        </div>
+                    @else
+                        <div style="text-align: right">
+                            <p>{{'Вы вошли как '.Auth::user()->name}}</p>
+                        </div>
+                        <div class="signup">
+                            <a class="btn-flat nyroModal" href="/logout" >Выйти с сайта</a>
+                        </div>
+                    @endif
+
                 </div>
             </div>
             <!-- menu -->

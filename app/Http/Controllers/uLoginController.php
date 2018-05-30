@@ -28,7 +28,7 @@ class uLoginController extends Controller
             if (isset($userData->id)) {
 
                 // Check user status.
-                if ($userData->status) {
+                if ($userData->status != 0) {
 
                     // Make login user.
                     Auth::loginUsingId($userData->id, TRUE);
