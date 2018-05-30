@@ -10,6 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
 
     @include('layouts.stiles')
+    @yield('styles')
 
 </head>
 
@@ -21,6 +22,7 @@
 
 @include('layouts.footer')
 @include('layouts.scripts')
+@yield('scripts')
 
 
 </body>

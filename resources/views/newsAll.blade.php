@@ -207,8 +207,6 @@
         </div>
     </section>
 
-    @yield('content');
-
     @include('layouts.footer')
     @include('layouts.scripts')
 

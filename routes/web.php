@@ -66,6 +66,16 @@ Route::any('commentDelete', 'CommentController@delete');
 //Роут uLogin
 Route::post('ulogin','uLoginController@login');
 
+//Роуты Документов
+Route::get('/documentsAll','DocumentController@index');
+Route::get('/documentView/{id}','DocumentController@view');
+Route::get('/documentCreateOpen','DocumentController@createOpen');
+Route::post('/documentCreatePost','DocumentController@createPost');
+Route::get('/documentEditOpen/{id}','DocumentController@editOpen');
+Route::post('/documentEditPost','DocumentController@editPost');
+Route::delete('/documentDelete/{id}','DocumentController@delete');
+
+
 
 Route::get('logout', function (){
     auth::logout();

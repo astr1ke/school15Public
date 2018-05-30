@@ -9,6 +9,9 @@
                         <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri={{'http://'. $_SERVER['HTTP_HOST']}}/ulogin;mobilebuttons=0;"></div>
                     </div>
                     @if (!(Auth::check()))
+                        <div>
+                            <p>{{'Вход на сайт с помощью соц сетей'}}</p>
+                        </div>
                         <div class="signup">
                             <a class="btn-flat nyroModal" href="/login" >Войти на сайт</a>
                         </div>
@@ -56,47 +59,17 @@
                         <li><a href="http://school.wunderpark.ru/gamepark">Детская площадка</a></li>
                         <li><a href="http://school.wunderpark.ru/lab">Тепличный комплекс</a></li></ul></li>
 
-                        <li><span>Документация</span><ul>
-                        <li><a href="/mainInformation">1.Основная Информация</a></li>
-                        <li><a href="/structureOrgansAuthority">2.Структуры огранов власти</a></li>
-                        <li><a href="/mainInformation">3.Документы</a></li>
-                        <li><a href="/mainInformation">4.Образование</a></li>
-                        <li><a href="/mainInformation">5.Образовательные стандарты</a></li>
-                        <li><a href="/mainInformation">6.Руководство. Педагогический состав</a></li>
-                        <li><a href="/mainInformation">7.Материально-техническое обеспечение иосначенность образовательного процесса</a></li>
-                        <li><a href="/mainInformation">8.Стипендии и иные виды материальной поддержки</a></li>
-                        <li><a href="/mainInformation">9.Платные образовательные услуги</a></li>
-                        <li><a href="/mainInformation">10.Финансово-хозяйственная деятельность</a></li>
-                        <li><a href="/mainInformation">11.Вакантные места для приема(перевода)</a></li>
-                        </ul></li>
+                        <li><a href="/documentsAll">Документация</a><ul>
 
-                        <li><span>Организационные материалы</span><ul>
-                        <li><a href="/mainInformation">Аттестация педагогических кадров</a></li>
-                        <li><a href="/structureOrgansAuthority">ГИА</a></li>
-                        <li><a href="/mainInformation">ОРКСЭ</a></li>
-                        <li><a href="/mainInformation">Кубановедение</a></li>
-                        <li><a href="/mainInformation">Предметные недели</a></li>
-                        <li><a href="/mainInformation">Профориентация учащихся</a></li>
-                        <li><a href="/mainInformation">Прием в первый класс</a></li>
-                        <li><a href="/mainInformation">Воспитательная работа</a></li>
-                        <li><a href="/mainInformation">Планирование воспитательной работы </a></li>
-                        <li><a href="/mainInformation">Штаб воспитательной работы</a></li>
-                        <li><a href="/mainInformation">Совет профилактики</a></li>
-                        <li><a href="/mainInformation">Школьное ученическое управление</a></li>
-                        <li><a href="/mainInformation">Ура! У нас каникулы</a></li>
-                        <li><a href="/mainInformation">Здоровый образ жизни</a></li>
-                        <li><a href="/mainInformation">Страница для родителей</a></li>
-                        <li><a href="/mainInformation">Месячник оборонно-массовой военно-патриотической работы родная Кубань</a></li>
-                        <li><a href="/mainInformation">Безопасность</a></li>
-                        <li><a href="/mainInformation">"Готов к труду и обороне"</a></li>
-                        <li><a href="/mainInformation">ЮИД</a></li>
-                        <li><a href="/mainInformation">Поисково-просветительная работа</a></li>
-                        <li><a href="/mainInformation">Школьная газета "Зеркало"</a></li>
-                        <li><a href="/mainInformation">Фотоальбомы</a></li>
-                        <li><a href="/mainInformation">Наш профсоюз</a></li>
-                        <li><a href="/mainInformation">Методическая копилка</a></li>
-                        </ul></li>
+                        @if (Auth::check()and (Auth::user()->IsAdmin==1))
+                        <li><a href="/documentCreateOpen">Добавить пункт</a></li>
+                        @endif
 
+                        <?php $documents = \App\document::all();?> <!-- Получение списка документов для охображения их заголовков в меню-->
+                        @foreach($documents as $document)
+                        <li><a href="/documentView/{{$document->id}}">{{$document->title}}</a></li>
+                        @endforeach
+                        </ul></li>
 
                         <li><a href="/contacts" >Контакты</a></li>			</ol>
                 </div>

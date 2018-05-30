@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
+@extends('layouts.layouts')
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Средняя школа №15</title>
-
-    <!----------------------------------------- подключаем стили ------------------------------------------->
-
-    <!-- подключаем boostrap -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+@section('styles')
 
     <script src="/modules/ckeditor/ckeditor.js"></script>
-    <link href="{{asset('css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('css/default.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('css/header_block.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('css')}}/school.css?1517413835" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{asset('css')}}/nyroModal.css" media="all">
-
     <style type="text/css">
         .fld {
             background: whitesmoke;
@@ -35,17 +19,11 @@
             width: max-content;
             height: 80px;
         }
+
     </style>
+@endsection
 
-
-
-</head>
-
-
-
-<body>
-@include('layouts.header')
-
+@section('content')
 <div class="content">
     <div class="wrapper">
 
@@ -112,21 +90,17 @@
     </div>
 </div>
 
-@include('layouts.footer')
 
-<!-------------------------подключаем скрипты ---------------------------------------->
-<!--подключаем jquery -->
-@include('layouts.scripts')
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<!-- подключаем bootstrap.js -->
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+@endsection
 
 
 
+@section('scripts')
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- подключаем bootstrap.js -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
 
 
-
-</body>
-
-</html>
+@endsection
