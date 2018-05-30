@@ -49,7 +49,11 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-                    <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
+                    <div style="height: 270px; width: 350px">
+                        <a href="/articleNews/{{$article->id}}">
+                        <img  src="{{$article->pictures}}" class="img-responsive" style="height: 100%; width: 100%;object-fit: cover;object-position: 0 0"/>
+                        </a>
+                    </div>
                         <h3>{{$article['articleName']}}</h3></a>
                     <p>{!!$txt!!}</p>
                 </div>
@@ -68,7 +72,11 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-                    <a href="/articleNews/{{$article->id}}?"><img  src="{{$article->pictures}}" class="img-responsive" />
+                    <div style="height: 270px; width: 350px">
+                        <a href="/articleNews/{{$article->id}}">
+                        <img  src="{{$article->pictures}}" class="img-responsive" style="height: 100%; width: 100%; object-fit: cover;object-position: 0 0" />
+                        </a>
+                    </div>
                         <h3>{{$article['articleName']}}</h3></a>
                     <p>{!!$txt!!}</p>
                 </div>

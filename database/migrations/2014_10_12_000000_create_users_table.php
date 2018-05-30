@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('ip')->nullable();
-            $table->boolean('status')->default(TRUE);
+            $table->integer('status')->default('1');
         });
     }
 
