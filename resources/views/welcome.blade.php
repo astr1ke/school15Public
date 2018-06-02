@@ -10,25 +10,25 @@
                             <ul class="amazingcarousel-list">
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><a href="images/main.jpg" title="17677754"  class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main.jpg"  alt="17677754" /></a></div>
-                                        <div class="amazingcarousel-titleMain">17677754</div>                    </div>
+                                        <div class="amazingcarousel-imageMain"><a href="images/main.jpg"   class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main.jpg"  alt="17677754" /></a></div>
+                                        <div class="amazingcarousel-titleMain"></div>                    </div>
                                 </li>
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><a href="images/main2.jpg" title="25367100"  class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main2.jpg"  alt="25367100" /></a></div>
-                                        <div class="amazingcarousel-titleMain">25367100</div>                    </div>
+                                        <div class="amazingcarousel-imageMain"><a href="images/main2.jpg"  class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main2.jpg"  alt="25367100" /></a></div>
+                                        <div class="amazingcarousel-titleMain"></div>                    </div>
                                 </li>
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><a href="images/main3.jpg" title="25367100"  class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main3.jpg"  alt="25367100" /></a></div>
-                                        <div class="amazingcarousel-titleMain">25367100</div>                    </div>
+                                        <div class="amazingcarousel-imageMain"><a href="images/main3.jpg"  class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main3.jpg"  alt="25367100" /></a></div>
+                                        <div class="amazingcarousel-titleMain"></div>                    </div>
                                 </li>
                             </ul>
                             <div class="amazingcarousel-prev"></div>
                             <div class="amazingcarousel-next"></div>
                         </div>
                         <div class="amazingcarousel-nav"></div>
-                        <div class="amazingcarousel-engine"><a href="http://amazingcarousel.com">JavaScript Scroller</a></div>
+                        <div class="amazingcarousel-engine"></div>
                     </div>
                 </div>
             </ul>
@@ -41,7 +41,7 @@
                 <h2>Последние новости</h2>
             </div>
             @foreach($articles1 as $article)
-                <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="col-md-4 wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">
                 <?php
                 $txt=$article->text;
                 $txt=preg_replace ('/<img.*>/Uis', '', $txt);

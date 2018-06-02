@@ -43,8 +43,8 @@ Route::get('stadion', function (){
 
 
 /* роуты для статей*/
+Route::get('news', 'NewsController@index');
 Route::get('articleNews/{id}', 'NewsController@view');
-Route::get('news/{id}', 'NewsController@index');
 Route::get('news/categories/{cat}/{id}', 'NewsController@categorieView');
 Route::delete('articleDelete/{id}', 'NewsController@delete');
 Route::get('articles', 'ArticlesController@editor');
@@ -85,3 +85,8 @@ Route::get('logout', function (){
 Auth::routes();
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

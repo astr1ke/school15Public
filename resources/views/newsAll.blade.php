@@ -36,7 +36,7 @@
             <?php if(isset($c)){
                 echo("- $c");
             }?>
-            @if($isAdmin==1)
+            @if($isAdmin)
                 <li><a href="/articles">Добавить статью</a></li>
             @endif
         </div>
@@ -59,7 +59,7 @@
                                             <span id="publish_date">{{$n->created_at}}</span>
                                             <span><i class="fa fa-user"></i> <a href="#">{{$n->user}}</a></span>
                                             <span><i class="fa fa-comment"></i> <a href="#">{{count(\App\article::find($n->id)->comments) .' коммент.'}}</a></span>
-                                            @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                            @if ($isAdmin)
                                                 <form action="/articleDelete/{{$n->id}}" method="post" >
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
@@ -67,7 +67,7 @@
                                                 </form>
                                             @endif
 
-                                            @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                            @if ($isAdmin)
                                                 <form action="/articleEdit/article/{{$n->id}}"  >
                                                     <button   class="btn fa" style="margin-top:5px; width: 100px" value="Редактировать статью">Редактир ст.</button>
                                                 </form>
@@ -76,15 +76,18 @@
                                     </div>
 
                                     <div class="col-xs-12 col-sm-10 blog-content">
-                                        <h4>{{$n['articleName']}}</h4>
+                                        <h4>{{$n->articleName}}</h4>
                                         <div class="pict">
                                             <a href="{{$n->pictures}}" ><img class="img-responsive img-blog" src="{{$n->pictures}}" width="100%" alt="" /></a>
                                         </div>
 
                                         <div class="txt">
-                                            <?php  $txt = preg_replace ('/<img.*>/Uis', '', $n->text);
-                                                $txt = preg_replace('/\s{2,}/', '', $txt);
-                                                $txt = mb_strimwidth($txt,0,300,'...');?> <!---  обрезаем колво символов для превью статей на главной --->
+
+                                            <?php   $txt = preg_replace ('/<img.*>/Uis', '', $n->text);
+                                                    $txt = preg_replace('/\s{2,}/', '', $txt);
+                                                    $txt = mb_strimwidth($txt,0,300,'...')
+                                            ?> <!---  обрезаем колво символов для превью статей на главной --->
+
                                             <p>{!!$txt!!}</p>
                                         </div>
 
@@ -101,20 +104,9 @@
                     @endforeach
 
                     <!--Пагинация(вывод строки с номерами страниц)-->
+
                     <ul class="pagination pagination-lg">
-                        @if($id>1)
-                            <li><a href="{{($id-1)}}"><i class="fa fa-long-arrow-left"></i>Предыдущая страница</a></li>
-                        @endif
-                        @for($i=1; !($i>$st);$i++)
-                            @if($i==$id)
-                                <li class="active"><a href="/news/{{$i}}">{{$i}}</a></li>
-                            @else
-                                <li><a href="/news/{{$i}}">{{$i}}</a></li>
-                            @endif
-                        @endfor
-                        @if($id<$st)
-                            <li><a href="{{($id+1)}}">Следующая страница<i class="fa fa-long-arrow-right"></i></a></li>
-                        @endif
+                      {{$news->links('vendor.pagination.default')}}
                     </ul>
                 </div>
 

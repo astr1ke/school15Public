@@ -5,7 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Вход') }}</div>
+                <div class="card-header">{{ __('Вход') }}
+                    <div class="header-social" style="text-align: right">
+                        <script src="//ulogin.ru/js/ulogin.js"></script>
+                        <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri={{'http://'. $_SERVER['HTTP_HOST']}}/ulogin;mobilebuttons=0;"></div>
+                    </div>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

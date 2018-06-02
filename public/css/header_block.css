@@ -53,8 +53,8 @@ continue school.css
 }
 
 #header .top-logo {
-	width: 210px;
-	height: 190px;
+	width: 180px;
+	height: 165px;
 	background: url('/images/logo.jpg') no-repeat top left;
 	background-size: contain;
 	margin: 0 auto;

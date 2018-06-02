@@ -49,39 +49,4 @@ $(document).ready(function(){
 	}
 
 	
-	$('.nyroModal').nyroModal();
-
-	if ($('#yamap_container').length)
-	{
-		$.getScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU", function(){
-	
-			ymaps.ready(function() {
-
-				var LocationMap = new ymaps.Map("yamap_container", {
-					center: [55.815320,37.037163],
-					type: 'yandex#map',
-					zoom: 15,
-					controls: ["zoomControl", "searchControl", "routeEditor", "trafficControl", "typeSelector"]
-				});
-				
-				LocationMap.behaviors.disable("scrollZoom");
-
-				var LocationMark = new ymaps.Placemark([55.814927,37.037018], {
-					balloonContentHeader: '<div class="title">Международная школа Wunderpark</div>',
-					balloonContentBody: '<div class="body"><p>23 км от МКАД <br />по Новорижскому шоссе</p> <p>+ 7 (495) 122-000-2</p></div>',
-					balloonContentFooter: '<a rel="nofollow" href="http://wunderpark.ru/uploads/map_print_rus.pdf" target="_blank">Распечатать карту</a>'
-				}, {
-					preset: 'islands#clusterIcon',
-					iconColor: '#3B73B9',
-					iconLayout: "default#image",
-					iconImageHref: "assets/images/wp-mark.png",
-					iconImageSize: [51, 81],
-					iconImageOffset: [-25, -68]
-				});
-
-				LocationMap.geoObjects.add(LocationMark);
-			});
-		});
-	}
-	
 });

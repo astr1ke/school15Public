@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{asset('css')}}/bootstrap.css" />
+<link rel="stylesheet" href="{{asset('css')}}/bootstrap.min.css" />
 <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
 <link href="{{asset('css/animate.css')}}" rel="stylesheet">
 <link href="{{asset('css/prettyPhoto.css')}}" rel="stylesheet">
@@ -15,4 +15,3 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('modules/carousel')}}/initcarousel-1.css">
 <link rel="stylesheet" type="text/css" href="{{asset('modules/carousel')}}/initcarousel-2.css">
-

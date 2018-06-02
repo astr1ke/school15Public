@@ -11,21 +11,18 @@ use PhpParser\Node\Stmt\If_;
 
 class NewsController extends Controller
 {
-    public function index($id){
-        $art = article::latest()->get(); // получение всех статей
-        $st = ceil((count($art))/5); //получения количеста страниц для отображения новостей
-        $art = $art->slice(($id-1)*5,5);
-        //$n1 =  array_reverse($n->toArray()); //реверс массива
-        //$news = array_slice($n1, (($id-1)*5), 5); //получение конкретных записей для отображения на данной странице
-
-        if (Auth::check() and Auth::user()->IsAdmin ){
-            $isAdmin = True;}
-        else                                             //узнаем есть ли право у пользователя работать со статьями
-            $isAdmin = False;
+    public function index(){
+        $art = article::paginate(5);
         $cat = categorie::all();
+        $isAdmin = $this->isLoginAdmin(Auth::user());
+        return view('newsAll',['news'=>$art,'isAdmin'=>$isAdmin,'categories'=>$cat]);
+    }
 
-
-        return view('newsAll',['news'=>$art,'st'=>$st,'id'=>$id,'isAdmin'=>$isAdmin,'categories'=>$cat]);
+    private function isLoginAdmin($user){
+        if (isset($user) and $user->IsAdmin ){
+            return True;}
+        else                                             //узнаем есть ли право у пользователя работать со статьями
+            return False;
     }
 
     public function categorieView($cat,$id){ //Отображение статей с определенными сатегориями
