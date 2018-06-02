@@ -155,11 +155,11 @@
 
                     <!--Вывод категорий статей-->
                     <div class="widget categories">
-                        <h3>Categories</h3>
+                        <h3>Выбор по категориям</h3>
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="blog_category">
-                                    <li><a href="/news/1">Все<span class="badge">{{\App\article::all()->count()}}</span></a></li>
+                                    <li><a href="/news">Все<span class="badge">{{\App\article::all()->count()}}</span></a></li>
                                     @foreach($categories as $categorie)
                                         <!--Получение колекции нужных статей -->
                                             <?php
@@ -180,7 +180,7 @@
 
                     <!--------Галерея-------->
                     <div class="widget blog_gallery">
-                        <h3>Our Gallery</h3>
+                        <h3>Галерея</h3>
                         <ul class="sidebar-gallery">
                             <?php $pict = \App\article::all();
                             $i=0;

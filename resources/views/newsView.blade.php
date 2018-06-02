@@ -57,6 +57,19 @@
                                             <span id="publish_date">{{$n['created_at']}}</span>
                                             <span><i class="fa fa-user"></i> <a href="#">{{$n['user']}}</a></span>
                                             <span><i class="fa fa-comment"></i> <a href="#">{{count(\App\article::find($n['id'])->comments).' коммент.' }}</a></span>
+                                            @if ($isAdmin)
+                                                <form action="/articleDelete/{{$n->id}}" method="post" >
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button  class="btn fa" style="margin-top: 5px; width: 100px " value="Удалить статью">Удалить ст.</button>
+                                                </form>
+                                            @endif
+
+                                            @if ($isAdmin)
+                                                <form action="/articleEdit/article/{{$n->id}}"  >
+                                                    <button   class="btn fa" style="margin-top:5px; width: 100px" value="Редактировать статью">Редактир ст.</button>
+                                                </form>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -99,7 +112,7 @@
                     </div>
 
                     <div class="widget categories">
-                        <h3>Categories</h3>
+                        <h3>Выбор по категориям</h3>
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="blog_category">
@@ -124,7 +137,7 @@
 
 
                     <div class="widget blog_gallery">
-                        <h3>Our Gallery</h3>
+                        <h3>Галерея</h3>
                         <ul class="sidebar-gallery">
                             <?php $pict = \App\article::all();
                             $i=0;

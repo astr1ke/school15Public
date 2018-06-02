@@ -19,46 +19,29 @@ class NewsController extends Controller
     }
 
     private function isLoginAdmin($user){
-        if (isset($user) and $user->IsAdmin ){
-            return True;}
-        else                                             //узнаем есть ли право у пользователя работать со статьями
-            return False;
+        if (isset($user) and $user->IsAdmin ){return True;}
+        else  return False ; //узнаем есть ли право у пользователя работать со статьями
     }
 
-    public function categorieView($cat,$id){ //Отображение статей с определенными сатегориями
-
-        $art = article::where('categorie',$cat)->latest()->get();// получение необходимых статей
-        $st = ceil((count($art))/5); //получения количеста страниц для отображения новостей
-        $art = $art->slice(($id-1)*5,5);
-
-        if (Auth::check() and Auth::user()->IsAdmin ){
-            $isAdmin = True;}
-        else                                             //узнаем есть ли право у пользователя работать со статьями
-            $isAdmin = False;
-        $c = $cat;  //передаем в вид название выбранной сатегории для шапки
+    public function categorieView($cat){ //Отображение статей с определенными сатегориями
+        $art = article::where('categorie',$cat)->paginate(5);
+        $c = $cat;
         $cat = categorie::all();
-
-
-        return view('newsAll',['news'=>$art,'st'=>$st,'id'=>$id,'isAdmin'=>$isAdmin,'categories'=>$cat,'c'=>$c]);
+        $isAdmin = $this->isLoginAdmin(Auth::user());
+        return view('newsAll',['news'=>$art, 'isAdmin'=>$isAdmin,'categories'=>$cat,'c'=>$c]);
     }
 
     public function delete ($id){
         Comment::where('article_id',$id)->delete();
         article::where('id',$id)->delete();
-        return redirect('/news/1');
+        return redirect('/news');
 
     }
 
     public function view($id){
         $news = article::where('id', $id)->get();
-
-
-        if (Auth::check() and Auth::user()->IsAdmin ){
-            $isAdmin = True;}
-        else                                             //узнаем есть ли право у пользователя работать со статьями
-            $isAdmin = False;
+        $isAdmin = $this->isLoginAdmin(Auth::user());
         $cat = categorie::all();
-
         return view('newsView',['news'=>$news,'st'=>1,'id'=>$id,'isAdmin'=>$isAdmin,'categories'=>$cat]);
     }
 }
