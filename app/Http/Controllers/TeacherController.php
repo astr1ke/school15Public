@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class TeacherController extends Controller
 {
 
+
     public function index(){
         $teachers = teacher::all();
         if (Auth::check() and Auth::user()->IsAdmin ){
@@ -45,6 +46,40 @@ class TeacherController extends Controller
 
         return redirect('/teachers');
 
+    }
+
+    public function delete($id){
+        teacher::destroy($id);
+        return redirect('/teachers');
+    }
+
+    public function edit($id){
+        $teacher = teacher::find($id);
+        return view('teacherEdit', ['teacher' => $teacher]);
+    }
+
+    public function editPost(Request $request){
+        $teacher = teacher::find($request->teacherId);
+        if (!($teacher)){
+            return abort(404);
+        }
+
+        $teacher->FIO = $request->FIO;
+        $teacher->about = $request->about;
+        $teacher->specialization = $request->specialization;
+        $rnd = rand(100,200);
+        if ($request->foto) {
+            $rnd = rand(100, 200);
+            $file = public_path() . '\\images\\teachers\\' . $rnd . $_FILES['foto']['name'];
+            $ff = '\\images\\teachers\\' . $rnd . $_FILES['foto']['name'];
+            $tmp_name = $_FILES["foto"]["tmp_name"];
+            move_uploaded_file($tmp_name, $file);
+            $teacher->foto = $ff;
+        }
+
+        if($teacher->save()){
+            return redirect('/teachers');
+        }
     }
 }
 

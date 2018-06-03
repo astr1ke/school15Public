@@ -58,6 +58,12 @@ Route::post('articleEditRequest','ArticlesController@editStore');
 Route::get('/teachers','TeacherController@index');
 Route::get('/addTeacher','TeacherController@add');
 Route::post('/addTeacherPost','TeacherController@post');
+Route::delete('/teacherDelete/{id}','TeacherController@delete');
+Route::get('/teacherEdit/{id}','TeacherController@edit');
+Route::post('/teacherEditPost','TeacherController@editPost');
+
+
+
 
 //Роут для комментариев
 Route::post('comment', 'CommentController@store')->name('comment');

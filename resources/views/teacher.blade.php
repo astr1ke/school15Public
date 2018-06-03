@@ -7,7 +7,7 @@
         <div class="breadcrumb">
             <li>Педагоги</li>
             @if($isAdmin==1)
-                <li><a href="/addTeacher">Добавить нового учителя</a></li>
+                <li><a href="/addTeacher">Добавить запись</a></li>
             @endif
         </div>
     </div>
@@ -32,7 +32,21 @@
             </div>
             <div class="section-title-2">{{$teacher->FIO}}</div>
             <div class="job-title">{{$teacher->specialization}}</div>
-            <p>{{$teacher->about}}</p>	<div>
+            <p>{{$teacher->about}}</p>
+            <div>
+                @if ($isAdmin)
+                    <form action="/teacherDelete/{{$teacher->id}}" method="post" >
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button  class="btn fa" style="margin-top: 5px; width: 100px " value="Удалить запись">Удалить ст.</button>
+                    </form>
+                @endif
+
+                @if ($isAdmin)
+                    <form action="/teacherEdit/{{$teacher->id}}"  >
+                        <button   class="btn fa" style="margin-top:5px; width: 100px" value="Редактировать запись">Редактир ст.</button>
+                    </form>
+                @endif
             </div>
 
         </div>
