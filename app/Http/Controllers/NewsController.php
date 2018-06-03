@@ -12,7 +12,7 @@ use PhpParser\Node\Stmt\If_;
 class NewsController extends Controller
 {
     public function index(){
-        $art = article::paginate(5);
+        $art = article::orderBy('id', 'DESC')->paginate(5);
         $cat = categorie::all();
         $isAdmin = $this->isLoginAdmin(Auth::user());
         return view('newsAll',['news'=>$art,'isAdmin'=>$isAdmin,'categories'=>$cat]);
@@ -24,7 +24,7 @@ class NewsController extends Controller
     }
 
     public function categorieView($cat){ //Отображение статей с определенными сатегориями
-        $art = article::where('categorie',$cat)->paginate(5);
+        $art = article::where('categorie',$cat)->orderBy('id', 'DESC')->paginate(5);
         $c = $cat;
         $cat = categorie::all();
         $isAdmin = $this->isLoginAdmin(Auth::user());
