@@ -49,7 +49,7 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-                    <div style="height: 270px; width: 350px">
+                    <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
                         <a href="/articleNews/{{$article->id}}">
                         <img  src="{{$article->pictures}}" class="img-responsive" style="height: 100%; width: 100%;object-fit: cover;object-position: 0 0"/>
                         </a>
