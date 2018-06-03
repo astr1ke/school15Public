@@ -20,19 +20,18 @@
 
                                         <div class="col-xs-12 col-sm-2" style="width: 130px">
                                             <div class="entry-meta">
-                                                <span id="publish_date">45453</span>
-                                                <span><i class="fa fa-user"></i> <a href="#">45445</a></span>
-                                                <span><i class="fa fa-comment"></i> <a href="#">44544545</a></span>
+                                                <span id="publish_date">-{{$document->id}}-</span>
+                                                <span><i class="fa fa-user"></i> <a>{{$document->created_at}}</a></span>
                                             @if (Auth::check() and Auth::user()->IsAdmin == 1)
                                                 <!--Кнопка удалить-->
                                                     <form action="/documentDelete/{{$document->id}}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <button  class="btn fa" style="margin-top: 5px; width: 100px " value="Удалить меню">Удалить меню</button>
+                                                        <button  class="btn fa" style="margin-top: 5px; width: 100px " value="Удалить">Удалить</button>
                                                     </form>
                                                     <!--Кнопка редактировать-->
                                                     <form action="/documentEditOpen/{{$document->id}}"  >
-                                                        <button   class="btn fa" style="margin-top:5px; width: 100px" value="Редактировать меню">Редактир меню</button>
+                                                        <button   class="btn fa" style="margin-top:5px; width: 100px" value="Редактировать">Редактир.</button>
                                                     </form>
                                                 @endif
                                             </div>
