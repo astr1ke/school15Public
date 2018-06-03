@@ -90,7 +90,7 @@
                                     <li role="presentation"><a href="http://school.wunderpark.ru/lab">Тепличный комплекс</a></li>
                                         </ul></li>
 
-                                    <li role="presentation"><a href="/news" >Статьи</a><!--<ul>
+                                    <li role="presentation"><a href="/news" >Блог</a><!--<ul>
                                     <li><a href="/news/1" >События</a></li>
                                     <li><a href="/gallery">Фотогалерея</a></li></ul>--></li>
 
