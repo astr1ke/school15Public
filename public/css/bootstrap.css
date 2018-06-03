@@ -1909,6 +1909,11 @@ pre code {
   .col-md-8 {
     width: 66.66666667%;
   }
+
+  .col-md-8x {
+     width: 69.66666667%;
+  }
+
   .col-md-7 {
     width: 58.33333333%;
   }
@@ -1921,6 +1926,11 @@ pre code {
   .col-md-4 {
     width: 33.33333333%;
   }
+
+  .col-md-4x {
+      width: 30.33333332%;
+  }
+
   .col-md-3 {
     width: 25%;
   }
@@ -4960,6 +4970,11 @@ a.badge:focus {
   .col-md-8 {
     width: 66.66666667%;
   }
+
+  .col-md-8x {
+    width: 69.66666667%;
+  }
+
   .col-md-7 {
     width: 58.33333333%;
   }
@@ -4971,6 +4986,9 @@ a.badge:focus {
   }
   .col-md-4 {
     width: 33.33333333%;
+  }
+  .col-md-4x {
+    width: 30.33333332%;
   }
   .col-md-3 {
     width: 25%;

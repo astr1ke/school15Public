@@ -8,7 +8,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 
-	config.filebrowserBrowseUrl = 'http://shcool/modules/kcfinder/browse.php?opener=ckeditor&type=files';
+    config.filebrowserBrowseUrl = 'http://shcool/modules/kcfinder/browse.php?opener=ckeditor&type=files';
     config.filebrowserImageBrowseUrl = 'http://shcool/modules/kcfinder/browse.php?opener=ckeditor&type=images';
     config.filebrowserFlashBrowseUrl = 'http://shcool/modules/kcfinder/browse.php?opener=ckeditor&type=flash';
     config.filebrowserUploadUrl = 'http://shcool/modules/kcfinder/upload.php?opener=ckeditor&type=files';
