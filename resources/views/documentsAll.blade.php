@@ -44,7 +44,7 @@
                                         </div>
 
                                         <div style="border-radius: 8px; height: max-content; padding-right: 15px" >
-                                            <p><h4 style="text-align:center">{{$document->title}}</h4></p>
+                                            <p><h4 style="text-align: left ">{{$document->title}}</h4></p>
                                             <div style="background: white; max-height: 200px;  overflow: auto;  border: 2px solid grey; border-radius: 5px">
                                                 <p>{!!$document->content!!}</p>
                                             </div>
