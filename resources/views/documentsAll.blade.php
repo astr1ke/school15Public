@@ -21,7 +21,7 @@
 
                             <div class="art">
                                 <div class="blog-item">
-                                    <div class="row">
+                                    <div class="row" style="background: whitesmoke; border-radius: 20px">
 
                                         <div class="col-xs-12 col-sm-2" style="width: 130px">
                                             <div class="entry-meta">
@@ -43,9 +43,9 @@
                                             </div>
                                         </div>
 
-                                        <div style="border-radius: 8px; height: max-content" >
+                                        <div style="border-radius: 8px; height: max-content; padding-right: 15px" >
                                             <p><h4 style="text-align:center">{{$document->title}}</h4></p>
-                                            <div style="background: white; max-height: 200px;  overflow: auto">
+                                            <div style="background: white; max-height: 200px;  overflow: auto;  border: 2px solid grey; border-radius: 5px">
                                                 <p>{!!$document->content!!}</p>
                                             </div>
                                             <!--Кнопка просмотреть далее-->
