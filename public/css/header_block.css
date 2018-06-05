@@ -2,9 +2,6 @@
 continue school.css
 */
 #header {
-	padding-top: 5px;
-	background: #ffffff;
-	background-image: url("/images/header.jpg");
 }
 
 #header .social_links {
@@ -54,9 +51,9 @@ continue school.css
 }
 
 #header .top-logo {
-	width: 180px;
-	height: 165px;
-	background: url('/images/logo.jpg') no-repeat top left;
+	width: 200px;
+	height: 200px;
+	background: url('/images/logo.png') no-repeat top left;
 	background-size: contain;
 	margin: 0 auto;
 
@@ -147,10 +144,13 @@ continue school.css
 	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
+
 }
 .main-menu-list > li {
 	display: block;
 	float: left;
+	position: relative;
+	z-index: 100;
 }
 .main-menu-list > li:last-child {
     margin-right: 0px;
@@ -211,11 +211,14 @@ continue school.css
 #header.fixed {
 	position: fixed !important;
 	z-index: 1000;
-    top: 0; 
+	top: 0;
 	left: 0;
-    width: 100%;
-    box-shadow: 0 0 3px #666666;
+	width: 100%;
+	box-shadow: 0 0 3px #666666;
 }
+#header.fixed .navigation{
+}
+
 #header.fixed .top-logo-title,
 #header.fixed .phone .address {
 	display: none;
@@ -231,6 +234,6 @@ continue school.css
 #header.fixed .top-logo {
 	/*-webkit-transform: scale3d(0.8,0.8,1);
 			transform: scale3d(0.8,0.8,1);*/
-	width: 133px;
-	height: 120px;
+	width: 170px;
+	height: 150px;
 }

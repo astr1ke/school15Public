@@ -29,7 +29,7 @@
 @include('layouts.header')
 <body>
 
-<div id="breadcrumb">
+<div id="breadcrumb" style="position: relative; z-index: 500px">
     <div class="container">
         <div class="breadcrumb">
             <li>Жизнь школы</li>
