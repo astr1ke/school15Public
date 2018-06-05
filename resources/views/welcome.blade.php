@@ -92,12 +92,12 @@
         </div>
     </div>
 
-<!--О нас-->
+<!--О щколе-->
 
 <div class="about">
     <div class="container">
         <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <h2>О нас</h2>
+            <h2>О Школе</h2>
             <img src="images/about.jpg" class="img-responsive" />
             <p>Учебное заведение находится по адресу: Краснодарский край, Успенский район,
                 село Коноково, улица Донская,5.
@@ -192,10 +192,8 @@
                     <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
 
                         <div class="media-body">
-                            <div class="pull-left">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <h2>Есть к вопросы в нам?</h2>
+                            <h2 style="text-align: left"><i class="fa fa-phone"></i>  Есть к вопросы в нам?</h2>
+
                             <p>Можете отправить нам сообщение через форму отправки сообщений на странице контакты или позвонить по телефону +7 (86140) 55555. </p>
                         </div>
                     </div>

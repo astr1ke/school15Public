@@ -86,11 +86,11 @@ hr {
 	padding: 0;
 	border: 0;
 	background: #8564A3;
-	background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#F1EE34), to(#FF6900));
-	background-image: -webkit-linear-gradient(to right, #F1EE34, #FF6900);
-	background-image: -moz-linear-gradient(to right, #F1EE34, #FF6900);
-	background-image: -o-linear-gradient(to right, #F1EE34, #FF6900);
-	background-image: linear-gradient(to right, #F1EE34, #FF6900);
+	background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#F1EE34), to(#ff9b02));
+	background-image: -webkit-linear-gradient(to right, #F1EE34, #ff9b02);
+	background-image: -moz-linear-gradient(to right, #F1EE34, #ff9b02);
+	background-image: -o-linear-gradient(to right, #F1EE34, #ff9b02);
+	background-image: linear-gradient(to right, #F1EE34, #ff9b02);
 }
 .dash {
 	width: 25px; 
