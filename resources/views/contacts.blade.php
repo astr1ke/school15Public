@@ -9,16 +9,9 @@
         </div>
     </div>
 
+    <br/>
     <div class="map" >
-        <<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3252.2041029395373!2d41.32937217359657!3d44.84917508172796!3m2!1i1024!2i768!4f13.
-        1!3m3!1m2!1s0x40f9c5d18ffe0627%3A0x91834f94af1f3938!2z0KjQutC-0LvQsCAxNQ!5e1!3m2!1sru!2sru!4v1525903502434"
-        width=1170 height="400" frameborder="0" style="
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-        border: none;" allowfullscreen></iframe>
-
-
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A213c3ca79a0a251293f7decf5ba7cb83982cae0433c17b0ec5498e1f326a1ed9&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
     </div>
 
 
@@ -26,7 +19,7 @@
     <section id="contact-page" style="margin-top: 40px">
         <div class="container">
             <div class="center">
-                <h2>Создайте сообщение</h2>
+                <h2>Задать вопрос</h2>
             </div>
             <div class="row contact-wrap">
                 <div class="status alert alert-success" style="display: none"></div>

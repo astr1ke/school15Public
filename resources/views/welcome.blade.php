@@ -123,6 +123,15 @@
 </div>
 
 <!--Карусель учителя-->
+    <div class="container">
+        <div class="wp-teachers row">
+            <div class="wp-widget section-title-1 uppercase">
+                Наш колектив
+                <a class="int-link" href="/teachers">ВСЕ ПЕДАГОГИ</a>
+                <a class="int-question question nyroModal" href="/contacts">Задать вопрос?</a>
+            </div>
+        </div>
+    </div>
 <div id="amazingcarousel-container-1">
     <div id="amazingcarousel-1" style="display:none;position:relative;width:100%;max-width:1040px;margin:0px auto 0px;">
         <div class="amazingcarousel-list-container">
