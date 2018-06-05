@@ -57,7 +57,7 @@ class ArticlesController extends Controller
         }
 
         if($article->save()){
-            return redirect('news/1');
+            return redirect('news');
         }
 
     }
@@ -84,7 +84,7 @@ class ArticlesController extends Controller
         ]);
 
 
-        return redirect('/news/1');
+        return redirect('/news');
 
 
     }

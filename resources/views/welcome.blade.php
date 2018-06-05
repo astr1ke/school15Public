@@ -11,18 +11,52 @@
                             <ul class="amazingcarousel-list">
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><a href="images/main.jpg"   class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main.jpg"  alt="17677754" /></a></div>
-                                        <div class="amazingcarousel-titleMain"></div>                    </div>
+                                        <div class="amazingcarousel-imageMain"><img src="images/main.jpg"  alt="17677754" /></a></div>
+                                    </div>
+                                    <a >
+                                        <div class="bx-caption">
+                                            <div class="bx-title">Дни Открытых Дверей</div>
+                                            <div class="bx-text"><div>
+                                                    В Международной Школе Wunderpark<br />
+                                                    с 6 июня по 5 июля</div>
+                                                <div>
+                                                    Среда и четверг 10:00 &ndash; 11:30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
                                 </li>
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><a href="images/main2.jpg"  class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main2.jpg"  alt="25367100" /></a></div>
-                                        <div class="amazingcarousel-titleMain"></div>                    </div>
+                                        <div class="amazingcarousel-imageMain"><img src="images/main2.jpg"  alt="25367100" /></a></div>
+                                    </div>
+                                        <div class="bx-caption">
+                                            <div class="bx-title">Дни Открытых Дверей</div>
+                                            <div class="bx-text"><div>
+                                                    В Международной Школе Wunderpark<br />
+                                                    с 6 июня по 5 июля</div>
+                                                <div>
+                                                    Среда и четверг 10:00 &ndash; 11:30</div>
+                                            </div>
+                                        </div>
+
                                 </li>
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><a href="images/main3.jpg"  class="html5lightbox" data-group="amazingcarousel-1"><img src="images/main3.jpg"  alt="25367100" /></a></div>
-                                        <div class="amazingcarousel-titleMain"></div>                    </div>
+                                        <div class="amazingcarousel-imageMain"><img src="images/main3.jpg"  alt="25367100" /></a></div>
+                                    </div>
+                                    <a >
+                                        <div class="bx-caption">
+                                            <div class="bx-title">Дни Открытых Дверей</div>
+                                            <div class="bx-text"><div>
+                                                    В Международной Школе Wunderpark<br />
+                                                    с 6 июня по 5 июля</div>
+                                                <div>
+                                                    Среда и четверг 10:00 &ndash; 11:30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
                                 </li>
                             </ul>
                             <div class="amazingcarousel-prev"></div>
@@ -50,17 +84,16 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-
                     <span class="img-border-square" style="height: 280px; width: 360px; margin: 0; padding: 5px">
-                        <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
-                            <a href="/articleNews/{{$article->id}}">
-                            <div class="shadow-layer"></div>
-                            <img  src="{{$article->pictures}}" class="img-responsive" style="height: 100%; width: 100%;object-fit: cover;object-position: 0 0"/>
-                            </a>
-                        </div>
+                        <a href="{{$article->pictures}}" class="html5lightbox" data-group="news">
+                            <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
+                                <div class="shadow-layer"></div>
+                                <img  src="{{$article->pictures}} " class="img-responsive html5lightbox" style="height: 100%; width: 100%;object-fit: cover;object-position: 0 0"/>
+                            </div>
+                        </a>
                     </span>
-                    <h3>{{$article['articleName']}}</h3></a>
-                    <p style="text-align: center">{!!$txt!!}</p>
+                    <a href="/articleNews/{{$article->id}}"><h3>{{$article['articleName']}}</h3>
+                    <p style="text-align: center">{!!$txt!!}</p></a>
                 </div>
             @endforeach
         </div>
@@ -78,15 +111,15 @@
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
                     <span class="img-border-square" style="height: 280px; width: 360px; margin: 0; padding: 5px">
-                        <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
-                            <a href="/articleNews/{{$article->id}}">
-                            <div class="shadow-layer"></div>
-                            <img  src="{{$article->pictures}}" class="img-responsive" style="max-width:100%; max-height:100%;"/>
-                            </a>
-                        </div>
+                        <a href="{{$article->pictures}}" class="html5lightbox" data-group="news">
+                            <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
+                                <div class="shadow-layer"></div>
+                                <img  src="{{$article->pictures}} " class="img-responsive html5lightbox" style="height: 100%; width: 100%;object-fit: cover;object-position: 0 0"/>
+                            </div>
+                        </a>
                     </span>
-                    <h3>{{$article['articleName']}}</h3></a>
-                    <p style="text-align: center">{!!$txt!!}</p>
+                    <a href="/articleNews/{{$article->id}}"><h3>{{$article['articleName']}}</h3>
+                        <p style="text-align: center">{!!$txt!!}</p></a>
                 </div>
             @endforeach
         </div>

@@ -79,7 +79,7 @@
                                     <div class="col-xs-12 col-sm-10 blog-content">
                                         <h4>{{$n->articleName}}</h4>
                                         <div class="pict">
-                                            <a href="{{$n->pictures}}" ><img class="img-responsive img-blog" src="{{$n->pictures}}" width="100%" alt="" /></a>
+                                            <a href="{{$n->pictures}}" class="html5lightbox" data-group="news" ><img class="img-responsive img-blog" src="{{$n->pictures}}" width="100%" alt="" /></a>
                                         </div>
 
                                         <div class="txt">
@@ -188,7 +188,7 @@
                             foreach($pict as $p){
                                 $i++;
                                 if (!($i>18)){
-                                    echo ("<li><a href=\"$p->pictures\"><img src=\"$p->pictures\" width=\"105\" height=\"71\" alt=\"\" /></a></li>");
+                                    echo ("<li><a href=\"$p->pictures\" class=\"html5lightbox\" data-group=\"galary\"><img src=\"$p->pictures\" width=\"105\" height=\"71\" alt=\"\" /></a></li>");
                                 }else break;
                             }
                             ?>
