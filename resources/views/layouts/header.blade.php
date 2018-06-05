@@ -4,7 +4,7 @@
         <div id="header" style="position: relative;" >
             <nav class="navbar-default" role="navigation" style="background: #ffffff ">
                 <div class="bx-wrapper" style="max-width: 100">
-                    <div class="navigation" style="background-image: url('images/header.jpg')">
+                    <div class="navigation" style="background-image: url('{{asset('images')}}/header.jpg')">
                         <div class="container">
 
                             <!--Боковая невидимая кнопка меню и логотип с боковыми панелями-->

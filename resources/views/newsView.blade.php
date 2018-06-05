@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Company-HTML Bootstrap theme</title>
-    <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
-
-    @include('layouts.stiles')
+@extends('layouts.layouts')
+@section('styles')
     <!--Стили коментариев-->
     <link rel="stylesheet" type="text/css" media="all" href="{{asset('comments/css')}}/comments.css" />
-
-
     <style type="text/css">
         .art {
             background: whitesmoke;
@@ -24,13 +12,11 @@
             margin-right: 30px;
         }
     </style>
+@endsection
 
-</head>
+@section('content')
 
-<body>
-
-    @include('layouts.header')
-
+    <hr>
     <div id="breadcrumb">
         <div class="container">
             <div class="breadcrumb">
@@ -157,10 +143,4 @@
         </div>
     </section>
     <!--/#blog-->
-
-    @include('layouts.footer')
-    @include('layouts.scripts')
-
-</body>
-
-</html>
+@endsection

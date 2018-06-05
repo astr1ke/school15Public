@@ -2,6 +2,7 @@
 @section('content')
 
     <!-- Главная картинка -->
+    <hr>
         <div id="slider" class="row">
             <ul class="bxslider">
                 <div id="amazingcarousel-container-2">
@@ -49,13 +50,17 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-                    <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
-                        <a href="/articleNews/{{$article->id}}">
-                        <img  src="{{$article->pictures}}" class="img-responsive" style="height: 100%; width: 100%;object-fit: cover;object-position: 0 0"/>
-                        </a>
-                    </div>
-                        <h3>{{$article['articleName']}}</h3></a>
-                    <p>{!!$txt!!}</p>
+
+                    <span class="img-border-square" style="height: 280px; width: 360px; margin: 0; padding: 5px">
+                        <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
+                            <a href="/articleNews/{{$article->id}}">
+                            <div class="shadow-layer"></div>
+                            <img  src="{{$article->pictures}}" class="img-responsive" style="height: 100%; width: 100%;object-fit: cover;object-position: 0 0"/>
+                            </a>
+                        </div>
+                    </span>
+                    <h3>{{$article['articleName']}}</h3></a>
+                    <p style="text-align: center">{!!$txt!!}</p>
                 </div>
             @endforeach
         </div>
@@ -72,13 +77,16 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-                    <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
-                        <a href="/articleNews/{{$article->id}}">
-                        <img  src="{{$article->pictures}}" class="img-responsive" style="height: 100%; width: 100%; object-fit: cover;object-position: 0 0" />
-                        </a>
-                    </div>
-                        <h3>{{$article['articleName']}}</h3></a>
-                    <p>{!!$txt!!}</p>
+                    <span class="img-border-square" style="height: 280px; width: 360px; margin: 0; padding: 5px">
+                        <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
+                            <a href="/articleNews/{{$article->id}}">
+                            <div class="shadow-layer"></div>
+                            <img  src="{{$article->pictures}}" class="img-responsive" style="max-width:100%; max-height:100%;"/>
+                            </a>
+                        </div>
+                    </span>
+                    <h3>{{$article['articleName']}}</h3></a>
+                    <p style="text-align: center">{!!$txt!!}</p>
                 </div>
             @endforeach
         </div>
@@ -145,6 +153,7 @@
 </div>
 
 <!--Партнерские ресурсы-->
+<hr>
 <section id="partner">
     <div class="container">
         <div class="center wow fadeInDown">
@@ -163,6 +172,7 @@
         </div>
     </div>
 </section>
+<hr>
 
 
 <!--Связь с нами-->
@@ -171,11 +181,12 @@
             <div class="row">
                 <div class="col-sm-8">
                     <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="pull-left">
-                            <i class="fa fa-phone"></i>
-                        </div>
+
                         <div class="media-body">
-                            <h2>У вас есть к нам вопросы?</h2>
+                            <div class="pull-left">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <h2>Есть к вопросы в нам?</h2>
                             <p>Можете отправить нам сообщение через форму отправки сообщений на странице контакты или позвонить по телефону +7 (86140) 55555. </p>
                         </div>
                     </div>
@@ -186,16 +197,11 @@
     </section>
     <!--/#conatcat-info-->
 
-    <div class="map" >
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13454.82394930258!2d41.33412416619353!3d44.
-        85153861224272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x91834f94af1f3938!2z0KjQutC-0LvQsCAxNQ!
-        5e0!3m2!1sru!2sru!4v1527362221131" width="800" height="600" frameborder="0" style="border:0position:relative;
-        height: 600px;width: 100%;margin-top: 10px" allowfullscreen></iframe>
-
-
+    <div align="center">
+        <div class="map">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A213c3ca79a0a251293f7decf5ba7cb83982cae0433c17b0ec5498e1f326a1ed9&amp;width=1150&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
     </div>
-
 
 
 

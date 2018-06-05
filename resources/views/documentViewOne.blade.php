@@ -1,5 +1,6 @@
 @extends('layouts.layouts')
 @section('content')
+    <hr>
     <div id="breadcrumb">
         <div class="container">
             <div class="breadcrumb">
