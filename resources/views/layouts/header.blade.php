@@ -3,7 +3,7 @@
 <header>
     <div id="header" style="position: relative; margin-bottom: 20px;" >
         <nav class="navbar-default" role="navigation">
-            <div class="navigation">
+            <div class="navigation" style="background-image: url('images/header.jpg')">
                 <div class="container">
 
                     <!--Боковая невидимая кнопка меню и логотип с боковыми панелями-->

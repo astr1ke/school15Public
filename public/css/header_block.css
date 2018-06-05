@@ -4,6 +4,7 @@ continue school.css
 #header {
 	padding-top: 5px;
 	background: #ffffff;
+	background-image: url("/images/header.jpg");
 }
 
 #header .social_links {

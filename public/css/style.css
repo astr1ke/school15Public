@@ -78,13 +78,13 @@ a:hover {
 }
 
 #breadcrumb {
-	background-color: #40c829;
+	background-color: #ffe536;
 	margin-top: 10px;
 }
 
 .breadcrumb {
   list-style: none;
-  background-color: #40c829;
+  background-color: #ffe536;
   border-radius: 0px;
   padding:3px 10px;
 }
@@ -1066,7 +1066,7 @@ ul.faq li > div h3 {
 }
 
 #publish_date {
-  background: #1BBD36;
+  background: #ff5733;
   border-bottom: 5px solid #4e4e4e;
   color: #fff;
   padding: 5px 0;
@@ -1222,7 +1222,7 @@ ul.sidebar-gallery {
 }
 
 .btn-lg:hover {
-	color:#1BBD36;
+	color: #56f53a;
 	background:#ddd;
 }
 
