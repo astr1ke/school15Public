@@ -361,24 +361,24 @@ a:hover {
 }
 
 #partner {
-  background: url(../images/partners/partner_bg.png) 50% 50% no-repeat;
+  background: url(../images/AllResours.jpg) 50% 50% no-repeat;
   background-size: cover;
 }
 
 #partner {
-  color: #fff;
+  color: #1e2e88;
   text-align: center;
   padding:100px;
 }
 
 #partner h2 {
-  color: #fff;
+  color: #1e2e88;
   font-size:30px;
   font-weight:600;
 }
 
 #partner p {
-  color: #fff;
+  color: #1e2e88;
   font-size:20px;
 
 }

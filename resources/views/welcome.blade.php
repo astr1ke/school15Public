@@ -11,52 +11,18 @@
                             <ul class="amazingcarousel-list">
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><img src="images/main.jpg"  alt="17677754" /></a></div>
+                                        <div class="amazingcarousel-imageMain"><img src="images/main.jpg"  alt="17677754" /></div>
                                     </div>
-                                    <a >
-                                        <div class="bx-caption">
-                                            <div class="bx-title">Дни Открытых Дверей</div>
-                                            <div class="bx-text"><div>
-                                                    В Международной Школе Wunderpark<br />
-                                                    с 6 июня по 5 июля</div>
-                                                <div>
-                                                    Среда и четверг 10:00 &ndash; 11:30</div>
-                                            </div>
-                                        </div>
-                                    </a>
-
                                 </li>
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><img src="images/main2.jpg"  alt="25367100" /></a></div>
+                                        <div class="amazingcarousel-imageMain"><img src="images/main2.jpg"  alt="25367100" /></div>
                                     </div>
-                                        <div class="bx-caption">
-                                            <div class="bx-title">Дни Открытых Дверей</div>
-                                            <div class="bx-text"><div>
-                                                    В Международной Школе Wunderpark<br />
-                                                    с 6 июня по 5 июля</div>
-                                                <div>
-                                                    Среда и четверг 10:00 &ndash; 11:30</div>
-                                            </div>
-                                        </div>
-
                                 </li>
                                 <li class="amazingcarousel-item">
                                     <div class="amazingcarousel-item-container">
-                                        <div class="amazingcarousel-imageMain"><img src="images/main3.jpg"  alt="25367100" /></a></div>
+                                        <div class="amazingcarousel-imageMain"><img src="images/main3.jpg"  alt="25367100" /></div>
                                     </div>
-                                    <a >
-                                        <div class="bx-caption">
-                                            <div class="bx-title">Дни Открытых Дверей</div>
-                                            <div class="bx-text"><div>
-                                                    В Международной Школе Wunderpark<br />
-                                                    с 6 июня по 5 июля</div>
-                                                <div>
-                                                    Среда и четверг 10:00 &ndash; 11:30</div>
-                                            </div>
-                                        </div>
-                                    </a>
-
                                 </li>
                             </ul>
                             <div class="amazingcarousel-prev"></div>
@@ -70,13 +36,14 @@
         </div>
 
 <!--Последние новости-->
-    <div class="lates">
+    <div class="lates" style="margin-top: 15px ">
         <div class="container">
             <div class="text-center">
                 <h2>Последние новости</h2>
             </div>
             @foreach($articles1 as $article)
                 <div class="col-md-4 wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">
+
                 <?php
                 $txt=$article->text;
                 $txt=preg_replace ('/<img.*>/Uis', '', $txt);
@@ -84,7 +51,8 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-                    <span class="img-border-square" style="height: 280px; width: 360px; margin: 0; padding: 5px">
+
+                    <span class="img-border-square" style="height: 274px; width: 354px; margin: 0; padding: 2px">
                         <a href="{{$article->pictures}}" class="html5lightbox" data-group="news">
                             <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
                                 <div class="shadow-layer"></div>
@@ -92,6 +60,7 @@
                             </div>
                         </a>
                     </span>
+
                     <a href="/articleNews/{{$article->id}}"><h3>{{$article['articleName']}}</h3>
                     <p style="text-align: center">{!!$txt!!}</p></a>
                 </div>
@@ -103,6 +72,7 @@
         <div class="container">
             @foreach($articles2 as $article)
                 <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+
                 <?php
                 $txt=$article->text;
                 $txt=preg_replace ('/<img.*>/Uis', '', $txt);
@@ -110,7 +80,8 @@
                 $txt=strip_tags($txt, '<br>');
                 $txt=mb_strimwidth($txt,0,100,'...');
                 ?> <!---  обрезаем колво символов для превью статей на главной --->
-                    <span class="img-border-square" style="height: 280px; width: 360px; margin: 0; padding: 5px">
+
+                    <span class="img-border-square" style="height: 274px; width: 354px; margin: 0; padding: 2px">
                         <a href="{{$article->pictures}}" class="html5lightbox" data-group="news">
                             <div style="max-height: 270px; max-width: 350px; height: 100%; width: 100%">
                                 <div class="shadow-layer"></div>
@@ -118,6 +89,7 @@
                             </div>
                         </a>
                     </span>
+
                     <a href="/articleNews/{{$article->id}}"><h3>{{$article['articleName']}}</h3>
                         <p style="text-align: center">{!!$txt!!}</p></a>
                 </div>
@@ -200,7 +172,7 @@
     <div class="container">
         <div class="center wow fadeInDown">
             <h2>Ссылки на другие образовательные ресурсы</h2>
-            <p>Если Вас интересует другая информация по образовательной тематике вы можете поискать ее на преставленных ниже серурсах: <br>  </p>
+            <p>Если Вас интересует другая информация по образовательной тематике вы можете поискать ее на преставленных ниже ресурсах: <br>  </p>
         </div>
 
         <div class="partners">
@@ -218,26 +190,20 @@
 
 
 <!--Связь с нами-->
-    <section id="conatcat-info">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-
                         <div class="media-body">
-                            <h2 style="text-align: left"><i class="fa fa-phone"></i>  Есть к вопросы в нам?</h2>
+                            <h2 style="text-align: left">Хотите к нам?</h2>
 
-                            <p>Можете отправить нам сообщение через форму отправки сообщений на странице контакты или позвонить по телефону +7 (86140) 55555. </p>
+                            <p>Мы находимся по адресу село Коноково улица Донская дом 5. </p>
+                            <p>Так же вы можете набрать нас по номеру +7 (86140) 67251 </p>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
-        <!--/.container-->
-    </section>
-    <!--/#conatcat-info-->
 
-    <div align="center">
+    <div align="center" style="margin: 40px">
         <div class="map">
             <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A213c3ca79a0a251293f7decf5ba7cb83982cae0433c17b0ec5498e1f326a1ed9&amp;width=1150&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
