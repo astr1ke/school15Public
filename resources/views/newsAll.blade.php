@@ -202,6 +202,9 @@
 
     @include('layouts.footer')
     @include('layouts.scripts')
+<script>
+    $("a").attr("href").addClass("html5lightbox");
+</script>
 
 </body>
 

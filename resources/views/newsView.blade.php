@@ -143,4 +143,7 @@
         </div>
     </section>
     <!--/#blog-->
+    <script>
+        $("a").attr("href").addClass("html5lightbox");
+    </script>
 @endsection

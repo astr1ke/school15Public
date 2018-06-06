@@ -28,6 +28,14 @@
 <script src="{{asset('modules/carousel')}}/initcarousel-2.js"></script>
 
 
+<script type="text/javascript" src="{{asset('modules')}}/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+<!--<script>
+    $("blog-content")
+    {
+        $("a").addClass("html5lightbox");
+    }
+</script>-->
 
 
 

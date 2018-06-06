@@ -15,3 +15,5 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('modules/carousel')}}/initcarousel-1.css">
 <link rel="stylesheet" type="text/css" href="{{asset('modules/carousel')}}/initcarousel-2.css">
+
+<link rel="stylesheet" href="{{asset('modules')}}/fancybox/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
