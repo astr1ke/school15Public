@@ -76,6 +76,7 @@ Route::post('ulogin','uLoginController@login');
 Route::get('/documentsAll','DocumentController@index');
 Route::get('/documentView/{id}','DocumentController@view');
 Route::get('/documentCreateOpen','DocumentController@createOpen');
+Route::get('/documentSubCreateOpen/{id}','DocumentController@createSubOpen');
 Route::post('/documentCreatePost','DocumentController@createPost');
 Route::get('/documentEditOpen/{id}','DocumentController@editOpen');
 Route::post('/documentEditPost','DocumentController@editPost');

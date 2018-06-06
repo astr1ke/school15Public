@@ -21,7 +21,7 @@
 
                                         <div class="col-xs-12 col-sm-2" style="width: 130px">
                                             <div class="entry-meta">
-                                                <span id="publish_date">-{{$document->id}}-</span>
+                                                <span id="publish_date" style="background: grey">-{{$document->id}}-</span>
                                                 <span><i class="fa fa-user"></i> <a>{{$document->created_at}}</a></span>
                                             @if (Auth::check() and Auth::user()->IsAdmin == 1)
                                                 <!--Кнопка удалить-->
@@ -57,10 +57,16 @@
                         <h3>Документация</h3>
                         <div>
                             <div class="col-sm-6">
-                                <ul class="blog_category">
-                                    <?php $documents = \App\document::all();?> <!-- Получение списка документов для охображения их заголовков в меню-->
-                                    @foreach($documents as $document)
-                                        <li style="width: max-content" ><a href="/documentView/{{$document->id}}">{{$document->title}}</a></li>
+                                <ul class="blog_category" style="width: max-content; max-width: 230px">
+                                @foreach($parentsDoc as $pD)
+                                    <!--отрисовка родительских объектов-->
+                                        <li style="margin-top: 15px; margin-bottom: 5px" ><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></li>
+                                    @if(isset($childrenDoc[$pD->id]))
+                                        @foreach($childrenDoc[$pD->id] as $cD)
+                                            <!--отрисовка дочерних объектов-->
+                                                <li style="margin-left: 30px; margin-bottom: 5px"><a href="/documentView/{{$cD['id']}}">{{$cD['title']}}</a></li>
+                                            @endforeach
+                                        @endif
                                     @endforeach
                                 </ul>
                             </div>

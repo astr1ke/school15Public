@@ -6,6 +6,9 @@
         <div class="container">
             <div class="breadcrumb">
                 <li>Документация</li>
+                @if((\Illuminate\Support\Facades\Auth::check()) and (\Illuminate\Support\Facades\Auth::user()->IsAdmin))
+                    <li><a href="/documentCreateOpen">Добавить</a></li>
+                @endif
             </div>
         </div>
     </div>
@@ -16,49 +19,98 @@
                 <div class="col-md-8" style="width: 78.66666665%">
                     <div style=" border-radius: 8px" >
 
-                        <h4 style="text-align: center; margin-bottom: 25px">Список документации с кратким просмотром</h4>
+                        <h4 style="text-align: center; margin-bottom: 25px">Редактор меню</h4>
                         <?php $documents = \App\document::all();?>
-                        @foreach($documents as $document)
+                        @foreach($parentsDoc as $pD)
 
+                            <!--Прорисовка родительских объектов-->
                             <div class="art">
-                                <div class="blog-item">
+                                <div class="blog-item" style="margin-bottom: 10px; margin-top: 30px" >
                                     <div class="row" style="background: whitesmoke; border-radius: 20px">
-
                                         <div class="col-xs-12 col-sm-2" style="width: 130px">
                                             <div class="entry-meta">
-                                                <span id="publish_date">-{{$document->id}}-</span>
-                                                <span><i class="fa fa-user"></i> <a>{{$document->created_at}}</a></span>
-                                                @if (Auth::check() and Auth::user()->IsAdmin == 1)
-                                                <!--Кнопка удалить-->
-                                                    <form action="/documentDelete/{{$document->id}}" method="post">
-                                                        {{ csrf_field() }}
-                                                        {{ method_field('DELETE') }}
-                                                        <button  class="btn fa" style="margin-top: 5px; margin-left: 5px; width: 100px " value="Удалить">Удалить</button>
-                                                    </form>
-                                                    <!--Кнопка редактировать-->
-
-                                                    <form action="/documentEditOpen/{{$document->id}}"  >
-                                                        <button   class="btn fa" style="margin-top:5px; margin-left: 5px; width: 100px" value="Редактировать">Редактир.</button>
-                                                    </form>
-                                                @endif
+                                                <span id="publish_date" style="background: grey">{{$pD->created_at}}</span>
                                             </div>
                                         </div>
 
-                                        <div style="border-radius: 8px; height: max-content; padding-right: 15px" >
-                                            <p><h4 style="text-align: left ">{{$document->title}}</h4></p>
-                                            <div style="background: white; max-height: 200px;  overflow: auto;  border: 2px solid grey; border-radius: 5px">
-                                                <p>{!!$document->content!!}</p>
-                                            </div>
-                                            <!--Кнопка просмотреть далее-->
-                                            <div style="margin-left: 14%">
-                                            <form action="/documentView/{{$document->id}}"  >
-                                                <button   class="btn fa" style="margin-top:5px; width: 100px" value="Подробнее">Подробнее</button>
-                                            </form>
+                                        <div style="border-radius: 8px; height: max-content; padding-right: 15px; padding-top: 3px" >
+
+                                            <p style="text-align: left; font-size: 17.5px">{{$pD->title}}</p>
+                                            <div>
+
+                                                 @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                                <!--Кнопка удалить-->
+                                                <form action="/documentDelete/{{$pD->id}}" method="post" style="display: inline-block">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
+                                                </form>
+                                                <!--Кнопка редактировать-->
+
+                                                <form action="/documentEditOpen/{{$pD->id}}" style="display: inline-block; align: right" >
+                                                    <button   class="btn fa" style="margin-left: 5px; width: 80px" value="Редактировать">Редактир.</button>
+                                                </form>
+
+                                                <form action="/documentSubCreateOpen/{{$pD->id}}" style="display: inline-block" >
+                                                    <button   class="btn fa" style="margin-right: 15px; width: 130px" value="Создать подразд.">Создать подразд.</button>
+                                                </form>
+
+                                                @endif
+
+                                                <!--Кнопка просмотреть далее-->
+                                                <form action="/documentView/{{$pD->id}}" style="display: inline-block; align: right" >
+                                                    <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
+                                                </form>
                                         </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!--Прорисовка дочерних объектов-->
+                            @if(isset($childrenDoc[$pD->id]))
+                                @foreach($childrenDoc[$pD->id] as $cD)
+                                    <div class="art" style="margin-left: 50px">
+                                        <div class="blog-item" style="margin-bottom: 10px">
+                                            <div class="row" style="background: whitesmoke; border-radius: 20px">
+
+                                                <div class="col-xs-12 col-sm-2" style="width: 130px">
+                                                    <div class="entry-meta">
+                                                        <span id="publish_date" style="background: grey">{{$cD['created_at']}}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div style="border-radius: 8px; height: max-content; padding-right: 15px; padding-top: 3px" >
+
+                                                    <p style="text-align: left; font-size: 17.5px">{{$cD['title']}}</p>
+                                                    <div>
+
+                                                        @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                                            <!--Кнопка удалить-->
+                                                            <form action="/documentDelete/{{$cD['id']}}" style="display: inline-block" method="post">
+                                                                {{ csrf_field() }}
+                                                                {{ method_field('DELETE') }}
+                                                                <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
+                                                            </form>
+                                                            <!--Кнопка редактировать-->
+                                                            <form action="/documentEditOpen/{{$cD['id']}}" style="display: inline-block" >
+                                                                <button   class="btn fa" style="margin-left: 5px; margin-right: 20px; width: 80px" value="Редактировать">Редактир.</button>
+                                                            </form>
+
+                                                        @endif
+                                                            <!--Кнопка просмотреть далее-->
+                                                            <form action="/documentView/{{$cD['id']}}" style="display: inline-block" >
+                                                                <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
+                                                            </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                @endforeach
+                            @endif
                         @endforeach
                     </div>
                 </div>
@@ -69,10 +121,16 @@
                         <h3>Документация</h3>
                         <div class="row" >
                             <div class="col-sm-6" >
-                                <ul class="blog_category" style="width: max-content">
-                                <?php $documents = \App\document::all();?> <!-- Получение списка документов для охображения их заголовков в меню-->
-                                    @foreach($documents as $document)
-                                        <li ><a href="/documentView/{{$document->id}}">{{$document->title}}</a></li>
+                                <ul class="blog_category" style="width: max-content; max-width: 230px">
+                                    @foreach($parentsDoc as $pD)
+                                        <!--отрисовка родительских объектов-->
+                                        <li style="margin-top: 15px; margin-bottom: 5px" ><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></li>
+                                        @if(isset($childrenDoc[$pD->id]))
+                                            @foreach($childrenDoc[$pD->id] as $cD)
+                                            <!--отрисовка дочерних объектов-->
+                                                <li style="margin-left: 30px; margin-bottom: 5px"><a href="/documentView/{{$cD['id']}}">{{$cD['title']}}</a></li>
+                                            @endforeach
+                                        @endif
                                     @endforeach
                                 </ul>
                             </div>

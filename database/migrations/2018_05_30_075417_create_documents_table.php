@@ -17,6 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('content')->nullable();
+            $table->increments('parent_id')->nullable();
             $table->timestamps();
         });
     }

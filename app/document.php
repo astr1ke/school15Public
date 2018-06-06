@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class document extends Model
 {
     protected $fillable = [
-        'title','content',
+        'title','content', 'parents_id'
     ];
 }

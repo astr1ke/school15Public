@@ -39,6 +39,7 @@
 
         <form id="form" class="blocks" action="/documentCreatePost" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
+            <input type="hidden" name="parents_id" value="{{$id}}">
             <div class="fld">
                 <p>
                     <label style="width: max-content">Название пункта:</label>
