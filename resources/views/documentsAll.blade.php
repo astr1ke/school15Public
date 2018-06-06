@@ -124,7 +124,7 @@
                                 <ul class="blog_category" style="width: max-content; max-width: 230px">
                                     @foreach($parentsDoc as $pD)
                                         <!--отрисовка родительских объектов-->
-                                        <li style="margin-top: 15px; margin-bottom: 5px" ><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></li>
+                                        <li style="margin-top: 15px; margin-bottom: 10px" ><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></li>
                                         @if(isset($childrenDoc[$pD->id]))
                                             @foreach($childrenDoc[$pD->id] as $cD)
                                             <!--отрисовка дочерних объектов-->

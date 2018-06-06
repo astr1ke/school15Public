@@ -21,7 +21,7 @@
 
                                         <div class="col-xs-12 col-sm-2" style="width: 130px">
                                             <div class="entry-meta">
-                                                <span id="publish_date" style="background: grey">-{{$document->id}}-</span>
+                                                <span id="publish_date" style="background: grey">Создан</span>
                                                 <span><i class="fa fa-user"></i> <a>{{$document->created_at}}</a></span>
                                             @if (Auth::check() and Auth::user()->IsAdmin == 1)
                                                 <!--Кнопка удалить-->
@@ -60,7 +60,7 @@
                                 <ul class="blog_category" style="width: max-content; max-width: 230px">
                                 @foreach($parentsDoc as $pD)
                                     <!--отрисовка родительских объектов-->
-                                        <li style="margin-top: 15px; margin-bottom: 5px" ><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></li>
+                                        <li style="margin-top: 15px; margin-bottom: 10px" ><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></li>
                                     @if(isset($childrenDoc[$pD->id]))
                                         @foreach($childrenDoc[$pD->id] as $cD)
                                             <!--отрисовка дочерних объектов-->
