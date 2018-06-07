@@ -1,5 +1,6 @@
 @extends('layouts.layouts')
 @section('content')
+<div class="content">
     <hr>
     <div id="breadcrumb">
         <div class="container">
@@ -52,6 +53,7 @@
                     </div>
                 </div>
 
+
                 <aside class="col-md-4" style="width: 21.333333%">
                     <div class="widget categories">
                         <h3>Документация</h3>
@@ -73,11 +75,8 @@
                         </div>
                     </div>
                 </aside>
-
-
-
-            </div>
+            </aside>
         </div>
     </section>
-
+</div>
 @endsection

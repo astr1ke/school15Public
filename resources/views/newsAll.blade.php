@@ -28,21 +28,21 @@
 </head>
 @include('layouts.header')
 <body>
-
-<hr>
-<div id="breadcrumb" style="position: relative; z-index: 500px">
-    <div class="container">
-        <div class="breadcrumb">
-            <li>Жизнь школы</li>
-            <?php if(isset($c)){
-                echo("- $c");
-            }?>
-            @if($isAdmin)
-                <li><a href="/articles">Добавить статью</a></li>
-            @endif
+<div class="content">
+    <hr>
+    <div id="breadcrumb" style="position: relative; z-index: 500px">
+        <div class="container">
+            <div class="breadcrumb">
+                <li>Жизнь школы</li>
+                <?php if(isset($c)){
+                    echo("- $c");
+                }?>
+                @if($isAdmin)
+                    <li><a href="/articles">Добавить статью</a></li>
+                @endif
+            </div>
         </div>
     </div>
-</div>
 
 
     <section id="blog" class="container">
@@ -199,7 +199,7 @@
             </div>
         </div>
     </section>
-
+</div>
     @include('layouts.footer')
     @include('layouts.scripts')
 <script>

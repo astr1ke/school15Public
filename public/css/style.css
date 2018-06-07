@@ -13,6 +13,7 @@
 
 
 
+
 body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-size:14px;
@@ -23,7 +24,12 @@ body {
 	overflow-x:hidden;
     /*background-image: url(/images/fon.png); /* Путь к фоновому изображению */
 
+
 }
+.content {
+    min-height: calc(72.02vh - 80px);
+}
+
 
 
 hi,h2,h3,h4,h5,h6 {
@@ -48,7 +54,7 @@ a:hover {
 	text-decoration: none;
 	color:#eee;
 	}
-
+.content
 .btn-primary {
   padding: 8px 20px;
   background: #70dd00;
@@ -591,6 +597,7 @@ a:hover {
 .footer {
 	background-image: url('../images/footer.jpg');
 	padding:15px 22px;
+    flex: 0 0 auto;
 }
 
 ul.social-network {

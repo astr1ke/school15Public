@@ -14,6 +14,7 @@
 
 <body>
 @include('layouts.header')
+<div class="content">
     <div id="breadcrumb">
         <div class="container">
             <div class="breadcrumb">
@@ -111,7 +112,7 @@
             </div>
         </div>
     </div>
-
+</div>
 @include('layouts.footer')
 @include('layouts.scripts')
 

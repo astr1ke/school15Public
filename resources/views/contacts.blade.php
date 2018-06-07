@@ -1,5 +1,6 @@
 @extends('layouts.layouts')
 @section('content')
+<div class="content">
     <hr>
     <div id="breadcrumb">
         <div class="container">
@@ -64,4 +65,5 @@
         <!--/.container-->
     </section>
     <!--/#contact-page-->
+</div>
 @endsection

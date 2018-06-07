@@ -1,14 +1,14 @@
 @extends('layouts.layouts')
 @section('content')
-
+<div class="content">
     <hr>
-<div id="breadcrumb">
-    <div class="container">
-        <div class="breadcrumb">
-            <li>О нас</li>
+    <div id="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb">
+                <li>О нас</li>
+            </div>
         </div>
     </div>
-</div>
 
     <div class="about">
         <div class="container">
@@ -46,35 +46,35 @@
 
 
 
-<div class="our-team">
     <div class="our-team">
-        <div class="container">
-            <h3>Наша команда</h3>
-            <div class="text-center">
-                    <div id="amazingcarousel-1" style="display:none;position:relative;width:100%;max-width:1040px;margin:0px auto 0px;">
-                            <ul class="amazingcarousel-list">
-                                <?php
-                                $teachers = \App\teacher::all();
-                                ?>
-                                @foreach($teachers as $teacher)
-                                    <li class="amazingcarousel-item">
-                                        <div class="wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms" style="text-align: center">
-                                            <img src="{{$teacher->foto}}" alt="">
-                                            <h4>{{$teacher->FIO}}</h4>
-                                            <p>{{$teacher->specialization}}</p>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                            <div class="amazingcarousel-prev"></div>
-                            <div class="amazingcarousel-next"></div>
-                        <div class="amazingcarousel-nav"></div>
-                        <div class="amazingcarousel-engine"><a href="http://amazingcarousel.com">JavaScript Image Carousel</a></div>
-                    </div>
+        <div class="our-team">
+            <div class="container">
+                <h3>Наша команда</h3>
+                <div class="text-center">
+                        <div id="amazingcarousel-1" style="display:none;position:relative;width:100%;max-width:1040px;margin:0px auto 0px;">
+                                <ul class="amazingcarousel-list">
+                                    <?php
+                                    $teachers = \App\teacher::all();
+                                    ?>
+                                    @foreach($teachers as $teacher)
+                                        <li class="amazingcarousel-item">
+                                            <div class="wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms" style="text-align: center">
+                                                <img src="{{$teacher->foto}}" alt="">
+                                                <h4>{{$teacher->FIO}}</h4>
+                                                <p>{{$teacher->specialization}}</p>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                <div class="amazingcarousel-prev"></div>
+                                <div class="amazingcarousel-next"></div>
+                            <div class="amazingcarousel-nav"></div>
+                            <div class="amazingcarousel-engine"><a href="http://amazingcarousel.com">JavaScript Image Carousel</a></div>
+                        </div>
 
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

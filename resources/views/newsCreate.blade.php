@@ -27,7 +27,7 @@
 
 @section('content')
     <div class="content">
-        <div class="wrapper">
+        <div class="wrapper1">
 
             <p><h3 id="ca">Создание статьи<br/></h3></p>
 

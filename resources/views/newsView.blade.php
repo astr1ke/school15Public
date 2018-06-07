@@ -15,6 +15,7 @@
 @endsection
 
 @section('content')
+<div class="content">
 
     <hr>
     <div id="breadcrumb">
@@ -146,4 +147,5 @@
     <script>
         $("a").attr("href").addClass("html5lightbox");
     </script>
+</div>
 @endsection

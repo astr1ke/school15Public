@@ -19,7 +19,7 @@
 
 @section('content')
     <div class="content">
-        <div class="wrapper">
+        <div class="wrapper1">
 
             <p><h3 id="ca">Редактирование документа и его пункта в основном меню<br/></h3></p>
 

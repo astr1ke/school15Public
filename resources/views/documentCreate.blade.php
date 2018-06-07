@@ -20,9 +20,8 @@
 
 @section('content')
 <div class="content">
-    <div class="wrapper">
-
-        <p><h3 id="ca">Создание документа и его пункта в основном меню<br/></h3></p>
+    <div class="wrapper1">
+        <h3 id="ca">Создание документа и его пункта в основном меню<br/></h3>
 
         <!------- Список ошибок формы ------->
         @if (count($errors) > 0)

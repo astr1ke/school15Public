@@ -2,6 +2,7 @@
 @section('content')
 
     <!-- Главная картинка -->
+<div class="content">
     <hr>
         <div id="slider" class="row">
             <ul class="bxslider">
@@ -209,6 +210,6 @@
     </div>
 
 
-
-@stop
+</div>
+@endsection
 
