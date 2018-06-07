@@ -59,7 +59,8 @@ class DocumentController extends Controller
     }
 
     public function createSubOpen($id){
-        return view('documentCreate',['id'=>$id]);
+        $view_id = $this->count+1;
+        return view('documentCreate',['id'=>$id, 'view_id'=>$view_id]);
     }
 
     public function createPost(Request $request){
@@ -108,6 +109,7 @@ class DocumentController extends Controller
             document::create([
                 'title'=>$request->title,
                 'content'=>$cont,
+                'view_id'=> $this->count++,
             ]);
         }
 
