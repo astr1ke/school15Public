@@ -42,27 +42,34 @@
                                                 <div>
 
                                                      @if (Auth::check() and Auth::user()->IsAdmin == 1)
+
                                                     <!--Кнопка удалить-->
                                                     <form action="/documentDelete/{{$pD->id}}" method="post" style="display: inline-block">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
+                                                        <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 34px " value="Х">X</button>
                                                     </form>
+
                                                     <!--Кнопка редактировать-->
-
                                                     <form action="/documentEditOpen/{{$pD->id}}" style="display: inline-block; align: right" >
-                                                        <button   class="btn fa" style="margin-left: 5px; width: 80px" value="Редактировать">Редактир.</button>
+                                                        <button   class="btn fa" style="margin-left: 15px; width: 80px" value="Редактировать">Редактир.</button>
                                                     </form>
 
+                                                    <!--Кнопка создать раздел после данного раздела-->
+                                                    <form action="/documentCreateOpenAfter/{{$pD->view_id}}" style="display: inline-block" >
+                                                        <button   class="btn fa" style="margin-left: 25px; width: 190px" value="Создать подразд.">Создать после этого поля</button>
+                                                    </form>
+
+                                                    <!--Кнопка создать подраздел-->
                                                     <form action="/documentSubCreateOpen/{{$pD->id}}" style="display: inline-block" >
-                                                        <button   class="btn fa" style="margin-right: 15px; width: 130px" value="Создать подразд.">Создать подразд.</button>
+                                                        <button   class="btn fa" style="margin-right: 15px; width: 160px" value="Создать подразд.">Создать подраздел </button>
                                                     </form>
 
                                                     @endif
 
                                                     <!--Кнопка просмотреть далее-->
                                                     <form action="/documentView/{{$pD->id}}" style="display: inline-block; align: right" >
-                                                        <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
+                                                        <button   class="btn fa" style=" margin-left: 25px; width: 90px" value="Подробнее">Открыть</button>
                                                     </form>
                                             </div>
                                             </div>
@@ -93,17 +100,17 @@
                                                                 <form action="/documentDelete/{{$cD['id']}}" style="display: inline-block" method="post">
                                                                     {{ csrf_field() }}
                                                                     {{ method_field('DELETE') }}
-                                                                    <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
+                                                                    <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 34px " value="Удалить">X</button>
                                                                 </form>
                                                                 <!--Кнопка редактировать-->
                                                                 <form action="/documentEditOpen/{{$cD['id']}}" style="display: inline-block" >
-                                                                    <button   class="btn fa" style="margin-left: 5px; margin-right: 20px; width: 80px" value="Редактировать">Редактир.</button>
+                                                                    <button   class="btn fa" style="margin-left: 15px; margin-right: 20px; width: 80px" value="Редактировать">Редактир.</button>
                                                                 </form>
 
                                                             @endif
                                                                 <!--Кнопка просмотреть далее-->
                                                                 <form action="/documentView/{{$cD['id']}}" style="display: inline-block" >
-                                                                    <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
+                                                                    <button   class="btn fa" style="width: 90px" value="Подробнее">Открыть</button>
                                                                 </form>
 
                                                         </div>
