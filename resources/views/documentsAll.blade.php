@@ -123,15 +123,15 @@
 
                             <!--Прорисовка родительских объектов-->
                                         <div class="row" style="margin-left: 80px">
-                                            <div style="border-radius: 8px; width: 400px; background: whitesmoke" >
+                                            <div style="border-radius: 8px; width: 500px; height: 40px; background: whitesmoke; margin: 10px; padding: 8px" >
                                                 <p style="text-align: left; font-size: 17.5px"><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></p>
                                             </div>
                                         </div>
                                 <!--Прорисовка дочерних объектов-->
                                 @if(isset($childrenDoc[$pD->id]))
                                     @foreach($childrenDoc[$pD->id] as $cD)
-                                                <div class="row" style="margin-left: 130px">
-                                                    <div style="border-radius: 8px; width: 400px; background: whitesmoke" >
+                                                <div class="row" style="margin-left: 150px">
+                                                    <div style="border-radius: 8px; width: 500px; height: 40px; background: whitesmoke; margin: 10px; padding: 8px" >
                                                         <p style="text-align: left; font-size: 17.5px"><a href="/documentView/{{$cD['id']}}">{{$cD['title']}}</a></p>
                                                     </div>
                                                 </div>
