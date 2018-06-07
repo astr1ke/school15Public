@@ -16,9 +16,9 @@ class MailController extends Controller
             'text' =>'required|min:3|max:255',
         ]);
 
-        Mail::raw($request->text, function($message) use ($request){
+        Mail::raw('От: '.$request->email.' Сообщение:  '.$request->text, function($message) use ($request){
             $message->from($request->email, $request->name);
-           $message->to('mail.usa.va@gmail.com')->subject($request->subject);
+            $message->to('mail.usa.va@gmail.com')->subject($request->subject);
         });
 
     return view('contacts',['done'=>True]);
