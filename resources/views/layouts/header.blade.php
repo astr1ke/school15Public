@@ -28,7 +28,7 @@
                                             </div>
                                         </div>
                                         <div class="callback">
-                                            <a href="/contact">Отправить нам E-mail</a>
+                                            <a href="/contacts">Отправить нам E-mail</a>
                                         </div>
                                     </div>
                                     <!--Логотип-->
@@ -82,20 +82,18 @@
                                         <ol class="main-menu-list">
                                             <li role="presentation"><a href="/" >Главная</a></li>
 
-                                            <li role="presentation"><a href="/about" >О школе</a>
+                                            <li role="presentation">О школе
                                                 <ul role="tablist">
                                             <li role="presentation"><a href="/about">О школе</a>
-                                            <ul style="margin-left: 191px; margin-bottom: 50px">
+                                           <!-- <ul style="margin-left: 191px; margin-bottom: 50px">
                                                 <li  role="presentation"><a href="/about" >О школевв</a>
-                                            </ul>
+                                            </ul>-->
                                             </li>
                                             <li role="presentation"><a href="/teachers">Наши педагоги</a></li>
-                                            <li role="presentation"><a href="/dopolnitelnie-zaniatia">Дополнительные занятия</a></li>
-                                            <li role="presentation"><a href="/stadion">Стадион</a></li>
+                                            <li style="margin-bottom: 8px" role="presentation"><a href="/dopolnitelnie-zaniatia">Дополнительные занятия</a></li>
                                             <li role="presentation"><a href="/krujki">Кружки</a></li>
                                             <li role="presentation"><a href="http://school.wunderpark.ru/gamepark">Детская площадка</a></li>
-                                            <li role="presentation"><a href="http://school.wunderpark.ru/lab">Тепличный комплекс</a></li>
-                                                </ul></li>
+                                            </ul></li>
 
                                             <li role="presentation"><a href="/news" >Блог</a><!--<ul>
                                             <li><a href="/news/1" >События</a></li>
