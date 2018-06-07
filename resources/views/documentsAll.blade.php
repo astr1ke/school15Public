@@ -19,118 +19,141 @@
                 <div class="col-md-8" style="width: 78.66666665%">
                     <div style=" border-radius: 8px" >
 
-                        <h4 style="text-align: center; margin-bottom: 25px">Редактор меню</h4>
-                        <?php $documents = \App\document::all();?>
-                        @foreach($parentsDoc as $pD)
 
-                            <!--Прорисовка родительских объектов-->
-                            <div class="art">
-                                <div class="blog-item" style="margin-bottom: 10px; margin-top: 30px" >
-                                    <div class="row" style="background: whitesmoke; border-radius: 20px">
-                                        <div class="col-xs-12 col-sm-2" style="width: 130px">
-                                            <div class="entry-meta">
-                                                <span id="publish_date" style="background: grey">{{$pD->created_at}}</span>
+                        @if((\Illuminate\Support\Facades\Auth::check()) and (\Illuminate\Support\Facades\Auth::user()->IsAdmin))
+
+                            <h4 style="text-align: center; margin-bottom: 25px">Редактор меню</h4>
+                            <?php $documents = \App\document::all();?>
+                            @foreach($parentsDoc as $pD)
+
+                                <!--Прорисовка родительских объектов-->
+                                <div class="art">
+                                    <div class="blog-item" style="margin-bottom: 10px; margin-top: 30px" >
+                                        <div class="row" style="background: whitesmoke; border-radius: 20px">
+                                            <div class="col-xs-12 col-sm-2" style="width: 130px">
+                                                <div class="entry-meta">
+                                                    <span id="publish_date" style="background: grey">{{$pD->created_at}}</span>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div style="border-radius: 8px; height: max-content; padding-right: 15px; padding-top: 3px" >
+                                            <div style="border-radius: 8px; height: max-content; padding-right: 15px; padding-top: 3px" >
 
-                                            <p style="text-align: left; font-size: 17.5px">{{$pD->title}}</p>
-                                            <div>
+                                                <p style="text-align: left; font-size: 17.5px">{{$pD->title}}</p>
+                                                <div>
 
-                                                 @if (Auth::check() and Auth::user()->IsAdmin == 1)
-                                                <!--Кнопка удалить-->
-                                                <form action="/documentDelete/{{$pD->id}}" method="post" style="display: inline-block">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
-                                                </form>
-                                                <!--Кнопка редактировать-->
+                                                     @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                                    <!--Кнопка удалить-->
+                                                    <form action="/documentDelete/{{$pD->id}}" method="post" style="display: inline-block">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
+                                                    </form>
+                                                    <!--Кнопка редактировать-->
 
-                                                <form action="/documentEditOpen/{{$pD->id}}" style="display: inline-block; align: right" >
-                                                    <button   class="btn fa" style="margin-left: 5px; width: 80px" value="Редактировать">Редактир.</button>
-                                                </form>
+                                                    <form action="/documentEditOpen/{{$pD->id}}" style="display: inline-block; align: right" >
+                                                        <button   class="btn fa" style="margin-left: 5px; width: 80px" value="Редактировать">Редактир.</button>
+                                                    </form>
 
-                                                <form action="/documentSubCreateOpen/{{$pD->id}}" style="display: inline-block" >
-                                                    <button   class="btn fa" style="margin-right: 15px; width: 130px" value="Создать подразд.">Создать подразд.</button>
-                                                </form>
+                                                    <form action="/documentSubCreateOpen/{{$pD->id}}" style="display: inline-block" >
+                                                        <button   class="btn fa" style="margin-right: 15px; width: 130px" value="Создать подразд.">Создать подразд.</button>
+                                                    </form>
 
-                                                @endif
+                                                    @endif
 
-                                                <!--Кнопка просмотреть далее-->
-                                                <form action="/documentView/{{$pD->id}}" style="display: inline-block; align: right" >
-                                                    <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
-                                                </form>
-                                        </div>
+                                                    <!--Кнопка просмотреть далее-->
+                                                    <form action="/documentView/{{$pD->id}}" style="display: inline-block; align: right" >
+                                                        <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
+                                                    </form>
+                                            </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!--Прорисовка дочерних объектов-->
-                            @if(isset($childrenDoc[$pD->id]))
-                                @foreach($childrenDoc[$pD->id] as $cD)
-                                    <div class="art" style="margin-left: 50px">
-                                        <div class="blog-item" style="margin-bottom: 10px">
-                                            <div class="row" style="background: whitesmoke; border-radius: 20px">
+                                <!--Прорисовка дочерних объектов-->
+                                @if(isset($childrenDoc[$pD->id]))
+                                    @foreach($childrenDoc[$pD->id] as $cD)
+                                        <div class="art" style="margin-left: 50px">
+                                            <div class="blog-item" style="margin-bottom: 10px">
+                                                <div class="row" style="background: whitesmoke; border-radius: 20px">
 
-                                                <div class="col-xs-12 col-sm-2" style="width: 130px">
-                                                    <div class="entry-meta">
-                                                        <span id="publish_date" style="background: grey">{{$cD['created_at']}}</span>
+                                                    <div class="col-xs-12 col-sm-2" style="width: 130px">
+                                                        <div class="entry-meta">
+                                                            <span id="publish_date" style="background: grey">{{$cD['created_at']}}</span>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div style="border-radius: 8px; height: max-content; padding-right: 15px; padding-top: 3px" >
+                                                    <div style="border-radius: 8px; height: max-content; padding-right: 15px; padding-top: 3px" >
 
-                                                    <p style="text-align: left; font-size: 17.5px">{{$cD['title']}}</p>
-                                                    <div>
+                                                        <p style="text-align: left; font-size: 17.5px">{{$cD['title']}}</p>
+                                                        <div>
 
-                                                        @if (Auth::check() and Auth::user()->IsAdmin == 1)
-                                                            <!--Кнопка удалить-->
-                                                            <form action="/documentDelete/{{$cD['id']}}" style="display: inline-block" method="post">
-                                                                {{ csrf_field() }}
-                                                                {{ method_field('DELETE') }}
-                                                                <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
-                                                            </form>
-                                                            <!--Кнопка редактировать-->
-                                                            <form action="/documentEditOpen/{{$cD['id']}}" style="display: inline-block" >
-                                                                <button   class="btn fa" style="margin-left: 5px; margin-right: 20px; width: 80px" value="Редактировать">Редактир.</button>
-                                                            </form>
+                                                            @if (Auth::check() and Auth::user()->IsAdmin == 1)
+                                                                <!--Кнопка удалить-->
+                                                                <form action="/documentDelete/{{$cD['id']}}" style="display: inline-block" method="post">
+                                                                    {{ csrf_field() }}
+                                                                    {{ method_field('DELETE') }}
+                                                                    <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 70px " value="Удалить">Удалить</button>
+                                                                </form>
+                                                                <!--Кнопка редактировать-->
+                                                                <form action="/documentEditOpen/{{$cD['id']}}" style="display: inline-block" >
+                                                                    <button   class="btn fa" style="margin-left: 5px; margin-right: 20px; width: 80px" value="Редактировать">Редактир.</button>
+                                                                </form>
 
-                                                        @endif
-                                                            <!--Кнопка просмотреть далее-->
-                                                            <form action="/documentView/{{$cD['id']}}" style="display: inline-block" >
-                                                                <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
-                                                            </form>
+                                                            @endif
+                                                                <!--Кнопка просмотреть далее-->
+                                                                <form action="/documentView/{{$cD['id']}}" style="display: inline-block" >
+                                                                    <button   class="btn fa" style="width: 90px" value="Подробнее">Подробнее</button>
+                                                                </form>
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                @endforeach
-                            @endif
-                        @endforeach
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        @else
+
+                            <h4 style="text-align: center; margin-bottom: 25px">Обзор документации</h4>
+                            <?php $documents = \App\document::all();?>
+                            @foreach($parentsDoc as $pD)
+
+                            <!--Прорисовка родительских объектов-->
+                                        <div class="row">
+                                            <div style="border-radius: 8px; width: 400px; background: whitesmoke" >
+                                                <p style="text-align: left; font-size: 17.5px"><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></p>
+                                            </div>
+                                        </div>
+                                <!--Прорисовка дочерних объектов-->
+                                @if(isset($childrenDoc[$pD->id]))
+                                    @foreach($childrenDoc[$pD->id] as $cD)
+                                                <div class="row" style="margin-left: 50px">
+                                                    <div style="border-radius: 8px; width: 400px; background: whitesmoke" >
+                                                        <p style="text-align: left; font-size: 17.5px"><a href="/documentView/{{$cD['id']}}">{{$cD['title']}}</a></p>
+                                                    </div>
+                                                </div>
+                                    @endforeach
+                                @endif
+                            @endforeach
+
+                        @endif
+
                     </div>
                 </div>
 
                 <aside class="col-md-4" style="width: 21.333333%">
                     <!--Вывод -списка документов-->
                     <div class="widget categories" style="float: right ">
-                        <h3>Документация</h3>
+                        <h3>Навигация</h3>
                         <div class="row" >
                             <div class="col-sm-6" >
                                 <ul class="blog_category" style="width: max-content; max-width: 230px">
                                     @foreach($parentsDoc as $pD)
                                         <!--отрисовка родительских объектов-->
                                         <li style="margin-top: 15px; margin-bottom: 10px" ><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></li>
-                                        @if(isset($childrenDoc[$pD->id]))
-                                            @foreach($childrenDoc[$pD->id] as $cD)
-                                            <!--отрисовка дочерних объектов-->
-                                                <li style="margin-left: 30px; margin-bottom: 5px"><a href="/documentView/{{$cD['id']}}">{{$cD['title']}}</a></li>
-                                            @endforeach
-                                        @endif
                                     @endforeach
                                 </ul>
                             </div>

@@ -100,24 +100,7 @@
                                             <li><a href="/gallery">Фотогалерея</a></li></ul>--></li>
 
 
-
-                                            @if (Auth::check()and (Auth::user()->IsAdmin==1))
-                                                <li role="presentation"><a href="/documentsAll">Документация</a>
-                                                <ul role="tablist">
-                                                <li style="margin-bottom: 8px" role="presentation"><a href="/documentCreateOpen">Добавить пункт</a></li>
-                                            @else
-                                                <li role="presentation">Документация
-                                                <ul role="tablist">
-
-                                            @endif
-
-                                            <?php $documents = \App\document::where('parents_id', Null)->get();?> <!-- Получение списка документов для охображения их заголовков в меню-->
-
-                                            @foreach($documents as $document)
-                                                <li style="margin-bottom: 8px" role="presentation"><a href="/documentView/{{$document->id}}">{{$document->title}}</a></li>
-                                            @endforeach
-
-                                                </ul></li>
+                                            <li role="presentation"><a href="/documentsAll">Документация</a></li>
 
                                             <li role="presentation"><a href="/contacts" >Контакты</a></li>
                                         </ol>
