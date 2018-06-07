@@ -84,7 +84,11 @@
 
                                             <li role="presentation"><a href="/about" >О школе</a>
                                                 <ul role="tablist">
-                                            <li role="presentation"><a href="/about">О школе</a></li>
+                                            <li role="presentation"><a href="/about">О школе</a>
+                                            <ul style="margin-left: 191px; margin-bottom: 50px">
+                                                <li  role="presentation"><a href="/about" >О школевв</a>
+                                            </ul>
+                                            </li>
                                             <li role="presentation"><a href="/teachers">Наши педагоги</a></li>
                                             <li role="presentation"><a href="/dopolnitelnie-zaniatia">Дополнительные занятия</a></li>
                                             <li role="presentation"><a href="/stadion">Стадион</a></li>

@@ -82,7 +82,8 @@ Route::get('/documentEditOpen/{id}','DocumentController@editOpen');
 Route::post('/documentEditPost','DocumentController@editPost');
 Route::delete('/documentDelete/{id}','DocumentController@delete');
 
-
+//Роут отправки почты
+Route::post('/send', 'MailController@send');
 
 Route::get('logout', function (){
     auth::logout();
