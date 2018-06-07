@@ -117,12 +117,12 @@
                             @endforeach
                         @else
 
-                            <h4 style="text-align: center; margin-bottom: 25px">Обзор документации</h4>
+                            <h4 style="text-align: center; margin-bottom: 45px">Обзор документации</h4>
                             <?php $documents = \App\document::all();?>
                             @foreach($parentsDoc as $pD)
 
                             <!--Прорисовка родительских объектов-->
-                                        <div class="row">
+                                        <div class="row" style="margin-left: 80px">
                                             <div style="border-radius: 8px; width: 400px; background: whitesmoke" >
                                                 <p style="text-align: left; font-size: 17.5px"><a href="/documentView/{{$pD->id}}">{{$pD->title}}</a></p>
                                             </div>
@@ -130,7 +130,7 @@
                                 <!--Прорисовка дочерних объектов-->
                                 @if(isset($childrenDoc[$pD->id]))
                                     @foreach($childrenDoc[$pD->id] as $cD)
-                                                <div class="row" style="margin-left: 50px">
+                                                <div class="row" style="margin-left: 130px">
                                                     <div style="border-radius: 8px; width: 400px; background: whitesmoke" >
                                                         <p style="text-align: left; font-size: 17.5px"><a href="/documentView/{{$cD['id']}}">{{$cD['title']}}</a></p>
                                                     </div>
