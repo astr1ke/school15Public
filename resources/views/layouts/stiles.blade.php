@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{asset('modules/slipVision')}}/assets/css/bvi.min.css" type="text/css">
+
 <link rel="stylesheet" href="{{asset('css')}}/bootstrap.min.css" />
 <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
 <link href="{{asset('css/animate.css')}}" rel="stylesheet">

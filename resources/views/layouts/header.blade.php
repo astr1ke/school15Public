@@ -7,10 +7,6 @@
                     <div class="navigation" style="background-image: url('{{asset('images')}}/header.jpg')">
                         <div class="container">
 
-                            <!--Версия для слабовидящих-->
-                            <script type="text/javascript" src="{{asset('modules')}}/slipVision/special.js"></script>
-                            <!--Боковая невидимая кнопка меню и логотип с боковыми панелями-->
-
                                 <!--Боковая невидимая кнопка меню-->
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
                                     <span class="sr-only">Toggle navigation</span>
@@ -30,7 +26,7 @@
                                             </div>
                                         </div>
                                         <div class="callback">
-                                            <a href="/contacts">Отправить нам E-mail</a>
+                                            <a href="#" class="bvi-panel-open btn btn-danger btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Версия для слабовидящих</a>
                                         </div>
                                     </div>
                                     <!--Логотип-->
