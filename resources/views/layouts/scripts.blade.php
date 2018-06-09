@@ -30,7 +30,7 @@
 
 <script type="text/javascript" src="{{asset('modules')}}/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <script src='{{asset('modules/slipVision')}}/assets/js/responsivevoice.min.js?ver=1.5.0'></script>
 <script src="{{asset('modules/slipVision')}}/assets/js/bvi-init-panel.js"></script>
 <script src="{{asset('modules/slipVision')}}/assets/js/bvi.min.js"></script>

@@ -77,10 +77,10 @@
                             <div class="navbar-collapse collapse" >
                                 <div id="main_menu" class="row menuX">
                                     <div class="col-md-12">
-                                        <ol class="main-menu-list">
+                                        <ol class="main-menu-list" style="font-size: 20px">
                                             <li role="presentation"><a href="/" >Главная</a></li>
 
-                                            <li role="presentation">О школе
+                                            <li role="presentation"><a>О школе</a>
                                                 <ul role="tablist">
                                             <li role="presentation"><a href="/about">О школе</a>
                                            <!-- <ul style="margin-left: 191px; margin-bottom: 50px">
