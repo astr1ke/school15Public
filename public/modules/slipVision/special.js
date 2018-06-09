@@ -342,7 +342,7 @@ if (spec == 'y')
   inputTag.value=" ����������� ������ ";
 }
 else {
-  inputTag.setAttribute("style", "position:fixed; z-index:9999; cursor: pointer; outline: none; bottom:20px; font-size:20px; right:20px; margin: 5px;padding:5px; border: none; font-weight:bold; background: url(http://jikaka.ru/eye/eye.png) no-repeat; background-size:cover; width:100px; height:73px; " );
+  inputTag.setAttribute("style", "position:fixed; z-index:9999; cursor: pointer; outline: none; bottom:20px; font-size:20px; right:20px; margin: 5px;padding:5px; border: none; font-weight:bold; background: url(http://школа15.рус/modules/slipVision/eye.png) no-repeat; background-size:cover; width:100px; height:73px; " );
  inputTag.value="";
  // inputTag.value=" ������ ��� ������������ ";
 }
