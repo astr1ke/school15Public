@@ -29,7 +29,7 @@
                                                     <form action="/documentDelete/{{$document->id}}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <button  class="btn fa" style="margin-top: 5px; width: 100px " value="Удалить">Удалить</button>
+                                                        <button  class="btn fa" onClick="return confirm('Вы подтверждаете удаление?');" style="margin-top: 5px; width: 100px " value="Удалить">Удалить</button>
                                                     </form>
                                                     <!--Кнопка редактировать-->
                                                     <form action="/documentEditOpen/{{$document->id}}"  >

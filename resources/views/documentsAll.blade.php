@@ -47,7 +47,7 @@
                                                     <form action="/documentDelete/{{$pD->id}}" method="post" style="display: inline-block">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 34px " value="Х">X</button>
+                                                        <button  class="btn fa" onClick="return confirm('Вы подтверждаете удаление?');" style="margin-right: 15px; margin-left: 5px; width: 34px " value="Х">X</button>
                                                     </form>
 
                                                     <!--Кнопка редактировать-->
@@ -100,7 +100,7 @@
                                                                 <form action="/documentDelete/{{$cD['id']}}" style="display: inline-block" method="post">
                                                                     {{ csrf_field() }}
                                                                     {{ method_field('DELETE') }}
-                                                                    <button  class="btn fa" style="margin-right: 15px; margin-left: 5px; width: 34px " value="Удалить">X</button>
+                                                                    <button  class="btn fa" onClick="return confirm('Вы подтверждаете удаление?');" style="margin-right: 15px; margin-left: 5px; width: 34px " value="Удалить">X</button>
                                                                 </form>
                                                                 <!--Кнопка редактировать-->
                                                                 <form action="/documentEditOpen/{{$cD['id']}}" style="display: inline-block" >

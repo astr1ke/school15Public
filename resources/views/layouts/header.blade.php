@@ -7,6 +7,8 @@
                     <div class="navigation" style="background-image: url('{{asset('images')}}/header.jpg')">
                         <div class="container">
 
+                            <!--Версия для слабовидящих-->
+                            <script type="text/javascript" src="{{asset('modules')}}/slipVision/special.js"></script>
                             <!--Боковая невидимая кнопка меню и логотип с боковыми панелями-->
 
                                 <!--Боковая невидимая кнопка меню-->
